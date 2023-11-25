@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="resize: none;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="990.0" minWidth="10.0" prefWidth="754.8316040039062" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="496.0343017578125" minWidth="0.0" prefWidth="235.16839599609375" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="656.5959167480469" minHeight="10.0" prefHeight="505.8201904296875" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="252.83163452148438" minHeight="0.0" prefHeight="200.1798095703125" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="553.0" prefWidth="340.5" GridPane.columnIndex="1">
+         <children>
+            <ImageView fx:id="miniMap" fitHeight="204.0" fitWidth="339.0" pickOnBounds="true" preserveRatio="true" />
+            <TextArea fx:id="terminal" prefHeight="352.0" prefWidth="341.0" />
+         </children>
+      </VBox>
+      <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="553.0" prefWidth="860.0" style="-fx-border-width: 2; -fx-border-style: solid; -fx-border-color: 000000;">
+         <children>
+            <ImageView fx:id="imgGame" fitHeight="553.0" fitWidth="860.0" pickOnBounds="true" preserveRatio="true" />
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <top>
+                  <Polygon fx:id="arrowUp" fill="#69696991" points="-27.671966552734375, -82.0419921875, 22.897491455078125, -82.0419921875, -2.171966552734375, -131.55203247070312" stroke="BLACK" strokeType="INSIDE" style="fx-cursor: hand;" BorderPane.alignment="CENTER">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Polygon>
+               </top>
+               <left>
+                  <Polygon fx:id="arrowLeft" fill="#69696991" points="-59.01826477050781, 78.8497314453125, -24.64719581604004, 104.85360717773438, -24.64716911315918, 57.8497314453125" stroke="BLACK" strokeType="INSIDE" BorderPane.alignment="CENTER">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Polygon>
+               </left>
+               <right>
+                  <Polygon fx:id="arrowRight" fill="#69696991" points="33.57696533203125, -4.6556396484375, 76.0003662109375, -31.5, 33.57501220703125, -51.84759521484375" stroke="BLACK" strokeType="INSIDE" BorderPane.alignment="CENTER">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Polygon>
+               </right>
+               <bottom>
+                  <Polygon fx:id="arrowDown" fill="#69696991" points="-9.75311279296875, 3.507843017578125, 14.74688720703125, 48.507843017578125, 39.0902099609375, 3.666656494140625" stroke="BLACK" strokeType="INSIDE" BorderPane.alignment="CENTER">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Polygon>
+               </bottom>
+            </BorderPane>
+         </children>
+      </StackPane>
+      <ToolBar maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="247.0" prefWidth="860.0" style="-fx-background-color: #FFEBCD;" GridPane.rowIndex="1">
+        <items>
+          <Button fx:id="item1" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0">
+               <graphic>
+                  <ImageView fx:id="imgItem1" fitHeight="140.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="item2" layoutX="10.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0">
+               <graphic>
+                  <ImageView fx:id="imgItem2" fitHeight="140.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="item3" layoutX="172.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0">
+               <graphic>
+                  <ImageView fx:id="imgItem3" fitHeight="140.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="item4" layoutX="333.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0">
+               <graphic>
+                  <ImageView fx:id="imgItem4" fitHeight="140.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="item5" layoutX="495.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0">
+               <graphic>
+                  <ImageView fx:id="imgItem5" fitHeight="140.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+        </items>
+         <padding>
+            <Insets left="30.0" />
+         </padding>
+      </ToolBar>
+      <ToolBar maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="248.0" prefWidth="340.0" style="-fx-background-color: #FFEBCD;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <items>
+          <Button fx:id="talkButton" mnemonicParsing="false" text="Talk">
+               <font>
+                  <Font size="37.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="helpButton" layoutX="10.0" layoutY="32.0" mnemonicParsing="false" text="Help">
+               <font>
+                  <Font size="37.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+        </items>
+         <padding>
+            <Insets left="50.0" />
+         </padding>
+      </ToolBar>
+   </children>
+</GridPane>
