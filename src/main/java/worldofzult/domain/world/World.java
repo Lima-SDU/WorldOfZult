@@ -123,13 +123,13 @@ public class World {
         space1.addEdge("syd", space5);
         space3.addEdge("vest", space2);
         space3.addEdge("øst", space4);
-        space4.addEdge("sydvest", space7);
+        space4.addEdge("syd", space7);
         space4.addEdge("vest", space3);
         space5.addEdge("øst", space6);
         space6.addEdge("øst", space7);
         space6.addEdge("vest", space5);
         space7.addEdge("vest", space6);
-        space7.addEdge("nordøst", space4);
+        space7.addEdge("nord", space4);
         space7.addEdge("syd", space8);
         space8.addEdge("nord", space7);
 
