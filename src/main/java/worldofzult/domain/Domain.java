@@ -23,9 +23,15 @@ public class Domain {
     }
 
     public String getCurrent() {
-        Space current = context.getCurrent();
-        String name = current.getName();
-        return "src/main/resources/worldofzult/presentation/images/" + name + ".png";
+        return context.getCurrent().getName();
+    }
+
+    public boolean checkGroupStatus() {
+        if (context.getCurrent().getGroup() != null) {
+            return this.context.getCurrent().getGroup().isHungry();
+        } else {
+            return false;
+        }
     }
 
     public boolean[] getCurrentExits() {

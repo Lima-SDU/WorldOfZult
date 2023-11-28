@@ -56,7 +56,8 @@ public class WorldOfZultController {
     @FXML
     public void initialize() {
         domain = new Domain();
-        imgGame.setImage(new Image("file:src/main/resources/worldofzult/presentation/images/indgang.png"));
+        imgGame.setImage(new Image("file:src/main/resources/worldofzult/presentation/images/before/Indgang.png"));
+        miniMap.setImage(new Image("file:src/main/resources/worldofzult/presentation/images/minimap/indgang.jpg"));
 
         arrowDown.setUserData("syd");
         arrowLeft.setUserData("vest");
@@ -135,7 +136,10 @@ public class WorldOfZultController {
             Polygon button = (Polygon) mouseEvent.getSource();
             String direction = (String) button.getUserData();
             domain.runCommand("gå " + direction);
-            imgGame.setImage(new Image("file:" + domain.getCurrent()));
+
+            imgGame.setImage(new Image(findGameImage(domain.getCurrent())));
+            miniMap.setImage(new Image("file:src/main/resources/worldofzult/presentation/images/minimap/" + domain.getCurrent() + ".jpg"));
+
             boolean[] edges = domain.getCurrentExits();
             arrowUp.setVisible(edges[0]);
             arrowRight.setVisible(edges[1]);
@@ -170,4 +174,12 @@ public class WorldOfZultController {
             terminal.appendText(button.getUserData().toString() + "\n");
         }
     };
+
+    public String findGameImage(String name) {
+        if (domain.checkGroupStatus()) {
+            return "file:src/main/resources/worldofzult/presentation/images/before/" + name + ".png";
+        } else {
+            return "file:src/main/resources/worldofzult/presentation/images/after/" + name + ".png";
+        }
+    }
 }
