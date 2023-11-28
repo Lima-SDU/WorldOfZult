@@ -73,7 +73,7 @@
             <MenuButton fx:id="item1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0">
               <items>
                 <MenuItem fx:id="item1Give" mnemonicParsing="false" text="Aflever" />
-                <MenuItem fx:id="itemPutDown" mnemonicParsing="false" text="Læg ned" />
+                <MenuItem fx:id="item1PutDown" mnemonicParsing="false" text="Læg ned" />
                   <MenuItem fx:id="item1Info" mnemonicParsing="false" text="Info" />
               </items>
                <graphic>
@@ -93,7 +93,7 @@
             <MenuButton fx:id="item3" layoutX="10.0" layoutY="59.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0">
                <items>
                   <MenuItem fx:id="item3Give" mnemonicParsing="false" text="Aflever" />
-                  <MenuItem fx:id="Item3PutDown" mnemonicParsing="false" text="Læg ned" />
+                  <MenuItem fx:id="item3PutDown" mnemonicParsing="false" text="Læg ned" />
                   <MenuItem fx:id="item3Info" mnemonicParsing="false" text="Info" />
                </items>
                <graphic>

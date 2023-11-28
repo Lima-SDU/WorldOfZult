@@ -35,13 +35,13 @@ public class WorldOfZultController {
     public Button talkButton;
     public Button helpButton;
     public MenuItem item1Give;
-    public MenuItem itemPutDown;
+    public MenuItem item1PutDown;
     public MenuItem item1Info;
     public MenuItem item2Give;
     public MenuItem item2PutDown;
     public MenuItem item2Info;
     public MenuItem item3Give;
-    public MenuItem Item3PutDown;
+    public MenuItem item3PutDown;
     public MenuItem item3Info;
     public MenuItem item4Give;
     public MenuItem item4PutDown;
@@ -63,10 +63,46 @@ public class WorldOfZultController {
         item4.setPopupSide(Side.TOP);
         item5.setPopupSide(Side.TOP);
 
+        item1Give.setUserData("Item1:Give");
+        item2Give.setUserData("Item2:Give");
+        item3Give.setUserData("Item3:Give");
+        item4Give.setUserData("Item4:Give");
+        item5Give.setUserData("Item5:Give");
+
+        item1PutDown.setUserData("Item1:PutDown");
+        item2PutDown.setUserData("Item2:PutDown");
+        item3PutDown.setUserData("Item3:PutDown");
+        item4PutDown.setUserData("Item4:PutDown");
+        item5PutDown.setUserData("Item5:PutDown");
+
+        item1Info.setUserData("Item1:Info");
+        item2Info.setUserData("Item2:Info");
+        item3Info.setUserData("Item3:Info");
+        item4Info.setUserData("Item4:Info");
+        item5Info.setUserData("Item5:Info");
+
         arrowDown.addEventHandler(MouseEvent.MOUSE_CLICKED, navigationButton);
         arrowLeft.addEventHandler(MouseEvent.MOUSE_CLICKED, navigationButton);
         arrowUp.addEventHandler(MouseEvent.MOUSE_CLICKED, navigationButton);
         arrowRight.addEventHandler(MouseEvent.MOUSE_CLICKED, navigationButton);
+
+        item1Give.setOnAction(giveButton);
+        item2Give.setOnAction(giveButton);
+        item3Give.setOnAction(giveButton);
+        item4Give.setOnAction(giveButton);
+        item5Give.setOnAction(giveButton);
+
+        item1PutDown.setOnAction(putDownButton);
+        item2PutDown.setOnAction(putDownButton);
+        item3PutDown.setOnAction(putDownButton);
+        item4PutDown.setOnAction(putDownButton);
+        item5PutDown.setOnAction(putDownButton);
+        
+        item1Info.setOnAction(infoButton);
+        item2Info.setOnAction(infoButton);
+        item3Info.setOnAction(infoButton);
+        item4Info.setOnAction(infoButton);
+        item5Info.setOnAction(infoButton);
     }
 
     @FXML
@@ -84,6 +120,33 @@ public class WorldOfZultController {
         @Override
         public void handle(MouseEvent mouseEvent) {
             Polygon button = (Polygon) mouseEvent.getSource();
+            terminal.appendText(button.getUserData().toString() + "\n");
+        }
+    };
+
+    @FXML
+    EventHandler<ActionEvent> giveButton = new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent actionEvent) {
+            MenuItem button = (MenuItem) actionEvent.getSource();
+            terminal.appendText(button.getUserData().toString() + "\n");
+        }
+    };
+
+    @FXML
+    EventHandler<ActionEvent> putDownButton = new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent actionEvent) {
+            MenuItem button = (MenuItem) actionEvent.getSource();
+            terminal.appendText(button.getUserData().toString() + "\n");
+        }
+    };
+
+    @FXML
+    EventHandler<ActionEvent> infoButton = new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent actionEvent) {
+            MenuItem button = (MenuItem) actionEvent.getSource();
             terminal.appendText(button.getUserData().toString() + "\n");
         }
     };
