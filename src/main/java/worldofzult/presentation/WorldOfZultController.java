@@ -2,7 +2,6 @@ package worldofzult.presentation;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.event.EventTarget;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
 import javafx.scene.control.Button;
@@ -52,9 +51,12 @@ public class WorldOfZultController {
     public MenuItem item5PutDown;
     public MenuItem item5Info;
 
-    public Domain domain;
 
-    public ImageRegistry roomBefore;
+    // NON-FXML OBJECTS
+    public Domain domain;
+    public ImageRegistry afterImageRegistry;
+    public ImageRegistry beforeImageRegistry;
+    public ImageRegistry minimapRegistry;
 
     @FXML
     public void initialize() {
@@ -120,9 +122,24 @@ public class WorldOfZultController {
         arrowDown.setVisible(edges[2]);
         arrowLeft.setVisible(edges[3]);
 
-        roomBefore = new ImageRegistry("file:src/main/resources/worldofzult/presentation/images/vizsla-running.jpg");
-        roomBefore.register("Indgang", "file:src/main/resources/worldofzult/presentation/images/indgang.png");
-        roomBefore.register("Monsunland", "file:src/main/resources/worldofzult/presentation/images/monsunland.png");
+        beforeImageRegistry = new ImageRegistry("file:src/main/resources/worldofzult/presentation/images/fallback/non-suspicious-image.jpg");
+        beforeImageRegistry.register("Indgang", "file:src/main/resources/worldofzult/presentation/images/before/Indgang.png");
+        beforeImageRegistry.register("Monsunland", "file:src/main/resources/worldofzult/presentation/images/before/Monsunland.png");
+
+        afterImageRegistry = new ImageRegistry("file:src/main/resources/worldofzult/presentation/images/fallback/cat-behavior-social.jpg");
+        afterImageRegistry.register("Indgang", "file:src/main/resources/worldofzult/presentation/images/after/Indgang.png");
+        afterImageRegistry.register("Monsunland", "file:src/main/resources/worldofzult/presentation/images/after/Monsunland.png");
+
+        minimapRegistry = new ImageRegistry("file:src/main/resources/worldofzult/presentation/images/fallback/vizsla-running.jpg");
+        minimapRegistry.register("Bjergkæde","file:src/main/resources/worldofzult/presentation/images/minimap/Bjergkæde.jpg");
+        minimapRegistry.register("Bondegård","file:src/main/resources/worldofzult/presentation/images/minimap/Bondegård.jpg");
+        minimapRegistry.register("Drivhus-land","file:src/main/resources/worldofzult/presentation/images/minimap/Drivhus-land.jpg");
+        minimapRegistry.register("Eng","file:src/main/resources/worldofzult/presentation/images/minimap/Eng.jpg");
+        minimapRegistry.register("Frugtplantage","file:src/main/resources/worldofzult/presentation/images/minimap/Frugtplantage.jpg");
+        minimapRegistry.register("Indgang","file:src/main/resources/worldofzult/presentation/images/minimap/Indgang.jpg");
+        minimapRegistry.register("Jordland","file:src/main/resources/worldofzult/presentation/images/minimap/Jordland.jpg");
+        minimapRegistry.register("Monsunland","file:src/main/resources/worldofzult/presentation/images/minimap/Monsunland.jpg");
+        minimapRegistry.register("Strand","file:src/main/resources/worldofzult/presentation/images/minimap/Strand.jpg");
     }
 
     @FXML
@@ -144,11 +161,8 @@ public class WorldOfZultController {
             String direction = (String) button.getUserData();
             domain.runCommand("gå " + direction);
 
-            System.out.println(roomBefore.getImages());
-
-            imgGame.setImage(roomBefore.getImage(domain.getCurrent()));
-            //imgGame.setImage(new Image(findGameImage(domain.getCurrent())));
-            miniMap.setImage(new Image("file:src/main/resources/worldofzult/presentation/images/minimap/" + domain.getCurrent() + ".jpg"));
+            imgGame.setImage(findGameImage(domain.getCurrent()));
+            miniMap.setImage(minimapRegistry.getImage(domain.getCurrent()));
 
             boolean[] edges = domain.getCurrentExits();
             arrowUp.setVisible(edges[0]);
@@ -185,11 +199,11 @@ public class WorldOfZultController {
         }
     };
 
-    public String findGameImage(String name) {
+    public Image findGameImage(String name) {
         if (domain.checkGroupStatus()) {
-            return "file:src/main/resources/worldofzult/presentation/images/before/" + name + ".png";
+            return beforeImageRegistry.getImage(name);
         } else {
-            return "file:src/main/resources/worldofzult/presentation/images/after/" + name + ".png";
+            return afterImageRegistry.getImage(name);
         }
     }
 }
