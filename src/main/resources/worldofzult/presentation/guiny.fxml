@@ -3,6 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.ImageView?>
@@ -15,7 +17,7 @@
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="800.0" maxWidth="1200" minHeight="800" minWidth="1200" prefHeight="800.0" prefWidth="1200.0" style="resize: none;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="worldofzult.presentation.WorldOfZultController">
+<GridPane maxHeight="800.0" maxWidth="1200" minHeight="800" minWidth="1200" prefHeight="800.0" prefWidth="1200.0" style="resize: none;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="worldofzult.presentation.WorldOfZultController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="990.0" minWidth="10.0" prefWidth="754.8316040039062" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="496.0343017578125" minWidth="0.0" prefWidth="235.16839599609375" />
@@ -68,46 +70,56 @@
       </StackPane>
       <ToolBar maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="247.0" prefWidth="860.0" style="-fx-background-color: #FFEBCD;" GridPane.rowIndex="1">
         <items>
-          <Button fx:id="item1" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0">
+            <MenuButton fx:id="Item1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0">
+              <items>
+                <MenuItem fx:id="item1Give" mnemonicParsing="false" text="Aflever" />
+                <MenuItem fx:id="itemPutDown" mnemonicParsing="false" text="Læg ned" />
+                  <MenuItem fx:id="item1Info" mnemonicParsing="false" text="Info" />
+              </items>
                <graphic>
                   <ImageView fx:id="imgItem1" fitHeight="140.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="item2" layoutX="10.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0">
+            </MenuButton>
+            <MenuButton fx:id="Item2" layoutX="10.0" layoutY="59.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0">
+               <items>
+                  <MenuItem fx:id="item2Give" mnemonicParsing="false" text="Aflever" />
+                  <MenuItem fx:id="item2PutDown" mnemonicParsing="false" text="Læg ned" />
+                  <MenuItem fx:id="item2Info" mnemonicParsing="false" text="Info" />
+               </items>
                <graphic>
                   <ImageView fx:id="imgItem2" fitHeight="140.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="item3" layoutX="172.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0">
+            </MenuButton>
+            <MenuButton fx:id="imgItem3" layoutX="10.0" layoutY="59.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0">
+               <items>
+                  <MenuItem fx:id="item3Give" mnemonicParsing="false" text="Aflever" />
+                  <MenuItem fx:id="Item3PutDown" mnemonicParsing="false" text="Læg ned" />
+                  <MenuItem fx:id="item3Info" mnemonicParsing="false" text="Info" />
+               </items>
                <graphic>
                   <ImageView fx:id="imgItem3" fitHeight="140.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="item4" layoutX="333.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" >
+            </MenuButton>
+            <MenuButton fx:id="imgItem4" layoutX="10.0" layoutY="59.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0">
+               <items>
+                  <MenuItem fx:id="item4PutDown" mnemonicParsing="false" text="Aflever" />
+                  <MenuItem fx:id="item4PutDown" mnemonicParsing="false" text="Læg ned" />
+                  <MenuItem fx:id="item4Info" mnemonicParsing="false" text="Info" />
+               </items>
                <graphic>
                   <ImageView fx:id="imgItem4" fitHeight="140.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="item5" layoutX="495.0" layoutY="51.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0">
+            </MenuButton>
+            <MenuButton fx:id="imgItem5" layoutX="10.0" layoutY="59.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0">
+               <items>
+                  <MenuItem fx:id="item5Give" mnemonicParsing="false" text="Aflever" />
+                  <MenuItem fx:id="item5PutDown" mnemonicParsing="false" text="Læg ned" />
+                  <MenuItem fx:id="item5Info" mnemonicParsing="false" text="Info" />
+               </items>
                <graphic>
                   <ImageView fx:id="imgItem5" fitHeight="140.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
+            </MenuButton>
         </items>
          <padding>
             <Insets left="30.0" />
@@ -115,7 +127,7 @@
       </ToolBar>
       <ToolBar maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="248.0" prefWidth="340.0" style="-fx-background-color: #FFEBCD;" GridPane.columnIndex="1" GridPane.rowIndex="1">
         <items>
-          <Button fx:id="talkButton" mnemonicParsing="false" text="Talk" onMouseClicked="#talkButton">
+          <Button fx:id="talkButton" mnemonicParsing="false" onMouseClicked="#talkButton" text="Tal">
                <font>
                   <Font size="37.0" />
                </font>
@@ -126,7 +138,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="helpButton" layoutX="10.0" layoutY="32.0" mnemonicParsing="false" text="Help" onMouseClicked="#helpButton">
+            <Button fx:id="helpButton" layoutX="10.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#helpButton" text="Hjælp">
                <font>
                   <Font size="37.0" />
                </font>
