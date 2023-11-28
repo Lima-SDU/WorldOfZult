@@ -51,7 +51,10 @@ public class WorldOfZultController {
     public MenuItem item5Give;
     public MenuItem item5PutDown;
     public MenuItem item5Info;
+
     public Domain domain;
+
+    public ImageRegistry roomBefore;
 
     @FXML
     public void initialize() {
@@ -116,6 +119,10 @@ public class WorldOfZultController {
         arrowRight.setVisible(edges[1]);
         arrowDown.setVisible(edges[2]);
         arrowLeft.setVisible(edges[3]);
+
+        roomBefore = new ImageRegistry("file:src/main/resources/worldofzult/presentation/images/vizsla-running.jpg");
+        roomBefore.register("Indgang", "file:src/main/resources/worldofzult/presentation/images/indgang.png");
+        roomBefore.register("Monsunland", "file:src/main/resources/worldofzult/presentation/images/monsunland.png");
     }
 
     @FXML
@@ -137,7 +144,10 @@ public class WorldOfZultController {
             String direction = (String) button.getUserData();
             domain.runCommand("gå " + direction);
 
-            imgGame.setImage(new Image(findGameImage(domain.getCurrent())));
+            System.out.println(roomBefore.getImages());
+
+            imgGame.setImage(roomBefore.getImage(domain.getCurrent()));
+            //imgGame.setImage(new Image(findGameImage(domain.getCurrent())));
             miniMap.setImage(new Image("file:src/main/resources/worldofzult/presentation/images/minimap/" + domain.getCurrent() + ".jpg"));
 
             boolean[] edges = domain.getCurrentExits();
