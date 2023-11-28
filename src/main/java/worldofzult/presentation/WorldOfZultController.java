@@ -125,6 +125,7 @@ public class WorldOfZultController {
     @FXML
     public void helpButton() {
         terminal.appendText("HELP - YAY\n");
+        domain.runCommand("hjælp");
     }
 
     @FXML
