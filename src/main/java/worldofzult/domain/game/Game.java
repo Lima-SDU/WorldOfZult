@@ -26,7 +26,7 @@ public class Game {
     private static Scanner scanner  = new Scanner(System.in);
 
     // Adds new commands with their name and attached command-instance in the Registry
-    private static void initRegistry () {
+    public static void initRegistry () {
         Command cmdExit = new CommandExit();
         registry.register("afslut", cmdExit);
         registry.register("gå", new CommandGo());
@@ -44,10 +44,15 @@ public class Game {
         return context;
     }
 
-    // Main-loop
-    public static void main (String args[]) {
-        initRegistry(); // Initializes registry
+    public static Registry getRegistry() {
+        return registry;
+    }
 
+    // Main-loop
+    //public static void main (String args[]) {
+        //initRegistry(); // Initializes registry
+
+        /*
         Startscreen startscreen = new Startscreen();
         String name = startscreen.displayStartscreen(scanner);
 
@@ -71,5 +76,6 @@ public class Game {
         quiz.run();
 
         System.out.println("Tak for at spille! Du er nu helt færdig og klarede det på " + Counter.getCount() + " træk. Sult er et stort problem i nogle dele af verden, så vi håber, at du lærte noget nyt og selvfølgelig at spillet var spændende \\^o^/");
-    }
+        */
+    //}
 }

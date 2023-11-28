@@ -9,9 +9,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Polygon;
+import worldofzult.domain.Domain;
 
 public class WorldOfZultController {
     @FXML
@@ -49,9 +51,13 @@ public class WorldOfZultController {
     public MenuItem item5Give;
     public MenuItem item5PutDown;
     public MenuItem item5Info;
+    public Domain domain;
 
     @FXML
     public void initialize() {
+        domain = new Domain();
+        imgGame.setImage(new Image("file:src/main/resources/worldofzult/presentation/images/indgang.png"));
+
         arrowDown.setUserData("syd");
         arrowLeft.setUserData("vest");
         arrowUp.setUserData("nord");
@@ -97,12 +103,18 @@ public class WorldOfZultController {
         item3PutDown.setOnAction(putDownButton);
         item4PutDown.setOnAction(putDownButton);
         item5PutDown.setOnAction(putDownButton);
-        
+
         item1Info.setOnAction(infoButton);
         item2Info.setOnAction(infoButton);
         item3Info.setOnAction(infoButton);
         item4Info.setOnAction(infoButton);
         item5Info.setOnAction(infoButton);
+
+        boolean[] edges = domain.getCurrentExits();
+        arrowUp.setVisible(edges[0]);
+        arrowRight.setVisible(edges[1]);
+        arrowDown.setVisible(edges[2]);
+        arrowLeft.setVisible(edges[3]);
     }
 
     @FXML
@@ -120,7 +132,14 @@ public class WorldOfZultController {
         @Override
         public void handle(MouseEvent mouseEvent) {
             Polygon button = (Polygon) mouseEvent.getSource();
-            terminal.appendText(button.getUserData().toString() + "\n");
+            String direction = (String) button.getUserData();
+            domain.runCommand("gå " + direction);
+            imgGame.setImage(new Image("file:" + domain.getCurrent()));
+            boolean[] edges = domain.getCurrentExits();
+            arrowUp.setVisible(edges[0]);
+            arrowRight.setVisible(edges[1]);
+            arrowDown.setVisible(edges[2]);
+            arrowLeft.setVisible(edges[3]);
         }
     };
 
