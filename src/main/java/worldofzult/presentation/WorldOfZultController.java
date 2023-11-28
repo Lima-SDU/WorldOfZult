@@ -4,7 +4,10 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.event.EventTarget;
 import javafx.fxml.FXML;
+import javafx.geometry.Side;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -19,37 +22,46 @@ public class WorldOfZultController {
     public Polygon arrowLeft;
     public Polygon arrowRight;
     public Polygon arrowDown;
-    public Button item1;
+    public MenuButton item1;
     public ImageView imgItem1;
-    public Button item2;
+    public MenuButton item2;
     public ImageView imgItem2;
-    public Button item3;
+    public MenuButton item3;
     public ImageView imgItem3;
-    public Button item4;
+    public MenuButton item4;
     public ImageView imgItem4;
-    public Button item5;
+    public MenuButton item5;
     public ImageView imgItem5;
     public Button talkButton;
     public Button helpButton;
+    public MenuItem item1Give;
+    public MenuItem itemPutDown;
+    public MenuItem item1Info;
+    public MenuItem item2Give;
+    public MenuItem item2PutDown;
+    public MenuItem item2Info;
+    public MenuItem item3Give;
+    public MenuItem Item3PutDown;
+    public MenuItem item3Info;
+    public MenuItem item4Give;
+    public MenuItem item4PutDown;
+    public MenuItem item4Info;
+    public MenuItem item5Give;
+    public MenuItem item5PutDown;
+    public MenuItem item5Info;
 
     @FXML
     public void initialize() {
-        item1.setUserData("item1");
-        item2.setUserData("item2");
-        item3.setUserData("item3");
-        item4.setUserData("item4");
-        item5.setUserData("item5");
-
         arrowDown.setUserData("syd");
         arrowLeft.setUserData("vest");
         arrowUp.setUserData("nord");
         arrowRight.setUserData("øst");
 
-        item1.addEventHandler(MouseEvent.MOUSE_CLICKED, itemButton);
-        item2.addEventHandler(MouseEvent.MOUSE_CLICKED, itemButton);
-        item3.addEventHandler(MouseEvent.MOUSE_CLICKED, itemButton);
-        item4.addEventHandler(MouseEvent.MOUSE_CLICKED, itemButton);
-        item5.addEventHandler(MouseEvent.MOUSE_CLICKED, itemButton);
+        item1.setPopupSide(Side.TOP);
+        item2.setPopupSide(Side.TOP);
+        item3.setPopupSide(Side.TOP);
+        item4.setPopupSide(Side.TOP);
+        item5.setPopupSide(Side.TOP);
 
         arrowDown.addEventHandler(MouseEvent.MOUSE_CLICKED, navigationButton);
         arrowLeft.addEventHandler(MouseEvent.MOUSE_CLICKED, navigationButton);
@@ -66,15 +78,6 @@ public class WorldOfZultController {
     public void helpButton() {
         terminal.appendText("HELP - YAY\n");
     }
-
-    @FXML
-    EventHandler<MouseEvent> itemButton = new EventHandler<MouseEvent>() {
-        @Override
-        public void handle(MouseEvent mouseEvent) {
-            Button button = (Button) mouseEvent.getSource();
-            terminal.appendText(button.getUserData().toString() + "\n");
-        }
-    };
 
     @FXML
     EventHandler<MouseEvent> navigationButton = new EventHandler<MouseEvent>() {
