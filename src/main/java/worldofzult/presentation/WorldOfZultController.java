@@ -20,37 +20,58 @@ public class WorldOfZultController {
     public ImageView miniMap;
     public TextArea terminal;
     public ImageView imgGame;
+
+    // BUTTONS
+    public Button talkButton;
+    public Button helpButton;
+
+
+    // ARROWS
+    @FXML
     public Polygon arrowUp;
     public Polygon arrowLeft;
     public Polygon arrowRight;
     public Polygon arrowDown;
+
+    // INVENTORY FXML-OBJECTS
+    @FXML
+    // Inventory Item1
     public MenuButton item1;
     public ImageView imgItem1;
-    public MenuButton item2;
-    public ImageView imgItem2;
-    public MenuButton item3;
-    public ImageView imgItem3;
-    public MenuButton item4;
-    public ImageView imgItem4;
-    public MenuButton item5;
-    public ImageView imgItem5;
-    public Button talkButton;
-    public Button helpButton;
     public MenuItem item1Give;
     public MenuItem item1PutDown;
     public MenuItem item1Info;
+
+    // Inventory Item2
+    public MenuButton item2;
+    public ImageView imgItem2;
     public MenuItem item2Give;
     public MenuItem item2PutDown;
     public MenuItem item2Info;
+
+    // Inventory Item3
+    public MenuButton item3;
+    public ImageView imgItem3;
     public MenuItem item3Give;
     public MenuItem item3PutDown;
     public MenuItem item3Info;
+
+    // Inventory Item5
+    public MenuButton item4;
+    public ImageView imgItem4;
     public MenuItem item4Give;
     public MenuItem item4PutDown;
     public MenuItem item4Info;
+
+    // Inventory Item5
+    public MenuButton item5;
+    public ImageView imgItem5;
     public MenuItem item5Give;
     public MenuItem item5PutDown;
     public MenuItem item5Info;
+
+
+    // NON-FXML OBJECTS
     public Domain domain;
 
     @FXML
