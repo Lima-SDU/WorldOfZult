@@ -7,7 +7,9 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -35,7 +37,10 @@
       </VBox>
       <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="553.0" prefWidth="860.0" style="-fx-border-width: 2; -fx-border-style: solid; -fx-border-color: #000000;">
          <children>
-            <ImageView fx:id="imgGame" fitHeight="553.0" fitWidth="860.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imgGame" fitHeight="553.0" fitWidth="820.0" pickOnBounds="true">
+               <image>
+                  <Image url="@images/before/Monsunland.png" />
+               </image></ImageView>
             <BorderPane prefHeight="200.0" prefWidth="200.0">
                <top>
                   <Polygon fx:id="arrowUp" fill="#69696991" points="-27.671966552734375, -82.0419921875, 22.897491455078125, -82.0419921875, -2.171966552734375, -131.55203247070312" stroke="BLACK" strokeType="INSIDE" style="fx-cursor: hand;" BorderPane.alignment="CENTER">
@@ -66,6 +71,13 @@
                   </Polygon>
                </bottom>
             </BorderPane>
+            <AnchorPane>
+               <children>
+                  <ImageView fx:id="itemPlace1" fitHeight="100.0" fitWidth="100.0" layoutX="170.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="401.0" />
+                  <ImageView fx:id="itemPlace2" fitHeight="100.0" fitWidth="100.0" layoutX="277.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="itemPlace3" fitHeight="100.0" fitWidth="100.0" layoutX="440.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
          </children>
       </StackPane>
       <ToolBar maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="247.0" prefWidth="860.0" style="-fx-background-color: #FFEBCD;" GridPane.rowIndex="1">
