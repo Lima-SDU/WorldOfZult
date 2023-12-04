@@ -12,7 +12,9 @@ public class CommandInventory extends BaseCommand implements Command {
     }
 
     @Override
-    public void execute (Context context, String command, String parameters[]) {
+    public String execute (Context context, String command, String parameters[]) {
+        StringBuilder message = new StringBuilder();
+
         Space space = context.getCurrent();
 
         //Get the spaces inventory
@@ -20,12 +22,12 @@ public class CommandInventory extends BaseCommand implements Command {
 
         //Print items in space
         if (!spaceInventory.getItems().isEmpty()) {
-            System.out.println("Følgende redskaber ligger i rummet");
+            message.append("Følgende redskaber ligger i rummet");
             for (Item item : spaceInventory.getItems()) {
-                System.out.println(item.getName());
+                message.append(item.getName());
             }
         } else {
-            System.out.println("Der er ingen redskaber i rummet");
+            message.append("Der er ingen redskaber i rummet");
         }
 
         //Get the players inventory
@@ -33,12 +35,14 @@ public class CommandInventory extends BaseCommand implements Command {
 
         //Print items in player
         if (!playerInventory.getItems().isEmpty()) {
-            System.out.println("Følgende redskaber ligger i inventaret");
+            message.append("Følgende redskaber ligger i inventaret");
             for (Item item : playerInventory.getItems()) {
-                System.out.println(item.getName());
+                message.append(item.getName());
             }
         } else {
-            System.out.println("Der er ingen redskaber i inventaret");
+            message.append("Der er ingen redskaber i inventaret");
         }
+
+        return message.toString();
     }
 }

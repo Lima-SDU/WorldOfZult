@@ -12,11 +12,13 @@ public class CommandGiveItem extends BaseCommand implements Command {
     }
 
     @Override
-    public void execute (Context context, String command, String parameters[]) {
+    public String execute (Context context, String command, String parameters[]) {
+        StringBuilder message = new StringBuilder();
+
         //Check if exactly one item is selected
         if (guardEq(parameters, 1)) {
-            System.out.println("Fejl kun et redskab må gives");
-            return; //Stops command
+            message.append("Fejl kun et redskab må gives");
+            return message.toString(); //Stops command
         }
 
         //Get current space from context
@@ -34,8 +36,8 @@ public class CommandGiveItem extends BaseCommand implements Command {
             if (group.checkItem(parameters[0])) {
                 playerInventory.removeItem(playerInventory.getItem(parameters[0]));
                 group.setHunger(false);
-                System.out.println(parameters[0] + " blev givet til gruppen");
-                System.out.println(group.getSpeech2());
+                message.append(parameters[0] + " blev givet til gruppen");
+                message.append(group.getSpeech2());
 
                 boolean isDone = true;
 
@@ -50,13 +52,15 @@ public class CommandGiveItem extends BaseCommand implements Command {
                     context.makeDone();
                 }
 
+                return message.toString();
+
             } else {
                 //if group refuses item, print wrong item
-                System.out.println("Fejl: " + parameters[0] + " kan ikke bruges af gruppen");
+                return message.append("Fejl: " + parameters[0] + " kan ikke bruges af gruppen").toString();
             }
         } else {
             //if there is no group in the current space, print no group in this space
-            System.out.println("Fejl: Der er ingen gruppe i rummet");
+            return message.append("Fejl: Der er ingen gruppe i rummet").toString();
         }
     }
 }

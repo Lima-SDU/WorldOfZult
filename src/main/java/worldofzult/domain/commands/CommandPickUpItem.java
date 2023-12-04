@@ -12,11 +12,12 @@ public class CommandPickUpItem extends BaseCommand implements Command {
     }
 
     @Override
-    public void execute (Context context, String command, String parameters[]) {
+    public String execute (Context context, String command, String parameters[]) {
+        StringBuilder message = new StringBuilder();
+
         //Ensure that only 1 item is picked up at a time
         if (guardEq(parameters, 1)) {
-            System.out.println("Kun et redskab kan samles op ad gangen");
-            return; //Stops command
+            return message.append("Kun et redskab kan samles op ad gangen").toString(); //Stops command
         }
 
         //Get current space from context
@@ -33,12 +34,12 @@ public class CommandPickUpItem extends BaseCommand implements Command {
             //If it does, place it in inventory and remove from space
             if (item.getName().equalsIgnoreCase(parameters[0])) {
                 playerInventory.addItem(item);
-                System.out.println("Samlede " + item.getName() + " op");
+                message.append("Samlede " + item.getName() + " op");
                 spaceInventory.removeItem(item);
-                return; //Stops command
+                return message.toString(); //Stops command
             }
         }
         //Prints error, if the input doesn't match any item
-        System.out.println("Fejl: Redskab ikke fundet");
+        return message.append("Fejl: Redskab ikke fundet").toString();
     }
 }
