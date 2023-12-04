@@ -28,16 +28,20 @@ public class CommandPutDownItem extends BaseCommand implements Command {
         //Get the spaces inventory
         Inventory spaceInventory = space.getInventory();
 
-        //Check if any items name in inventory matches specified input from user
-        for (Item item : playerInventory.getItems()) {
-            if (item.getName().equalsIgnoreCase(parameters[0])) {
-                //Remove specified item from inventory and add item in space
-                spaceInventory.addItem(item);
-                System.out.println("Lagde " + item.getName() + " ned");
-                playerInventory.removeItem(item);
-                return;
+        if (spaceInventory.getItems().size() < 3) {
+            //Check if any items name in inventory matches specified input from user
+            for (Item item : playerInventory.getItems()) {
+                if (item.getName().equalsIgnoreCase(parameters[0])) {
+                    //Remove specified item from inventory and add item in space
+                    spaceInventory.addItem(item);
+                    System.out.println("Lagde " + item.getName() + " ned");
+                    playerInventory.removeItem(item);
+                    return;
+                }
             }
+            System.out.println("Fejl: Redskab ikke fundet");
+        } else {
+            System.out.println("Fejl: Der er ikke plads til flere items i rummet");
         }
-        System.out.println("Fejl: Redskab ikke fundet");
     }
 }

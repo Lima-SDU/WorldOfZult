@@ -25,6 +25,7 @@ public class Game {
     // Scanner for getting player input
     private static Scanner scanner  = new Scanner(System.in);
 
+
     // Adds new commands with their name and attached command-instance in the Registry
     public static void initRegistry () {
         Command cmdExit = new CommandExit();

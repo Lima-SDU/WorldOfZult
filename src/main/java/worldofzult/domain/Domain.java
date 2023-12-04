@@ -2,10 +2,13 @@ package worldofzult.domain;
 
 import worldofzult.domain.commands.Registry;
 import worldofzult.domain.game.Game;
+import worldofzult.domain.inventory.Item;
+import worldofzult.domain.player.Player;
 import worldofzult.domain.session.Context;
 import worldofzult.domain.world.Node;
 import worldofzult.domain.world.Space;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public class Domain {
@@ -16,6 +19,8 @@ public class Domain {
        Game.initRegistry();
        context = Game.getContext();
        registry = Game.getRegistry();
+       Player player = new Player("");
+       context.setPlayer(player);
     }
 
     public void runCommand(String command) {
@@ -46,5 +51,23 @@ public class Domain {
             }
         }
         return result;
+    }
+
+    public ArrayList<String> getItemsInRoom() {
+        ArrayList<Item> items = context.getCurrent().getInventory().getItems();
+        ArrayList<String> itemsString = new ArrayList<String>();
+        for (Item item : items) {
+            itemsString.add(item.getName());
+        }
+        return itemsString;
+    }
+
+    public ArrayList<String> getItemsInInventory() {
+        ArrayList<Item> items = context.getPlayer().getInventory().getItems();
+        ArrayList<String> itemsString = new ArrayList<String>();
+        for (Item item : items) {
+            itemsString.add(item.getName());
+        }
+        return itemsString;
     }
 }

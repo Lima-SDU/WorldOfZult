@@ -15,6 +15,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Polygon;
 import worldofzult.domain.Domain;
 
+import java.util.ArrayList;
+
 public class WorldOfZultController {
     @FXML
     public ImageView miniMap;
@@ -70,15 +72,35 @@ public class WorldOfZultController {
     public MenuItem item5PutDown;
     public MenuItem item5Info;
 
+    // Spaces for displaying items in a room
+    public ImageView itemPlace1;
+    public ImageView itemPlace2;
+    public ImageView itemPlace3;
 
     // NON-FXML OBJECTS
     public Domain domain;
+    public ArrayList<ImageView> roomImageViews;
+    public ArrayList<ImageView> inventoryImageViews;
 
     @FXML
     public void initialize() {
         domain = new Domain();
         imgGame.setImage(new Image("file:src/main/resources/worldofzult/presentation/images/before/Indgang.png"));
         miniMap.setImage(new Image("file:src/main/resources/worldofzult/presentation/images/minimap/indgang.jpg"));
+
+        roomImageViews = new ArrayList<ImageView>();
+
+        roomImageViews.add(itemPlace1);
+        roomImageViews.add(itemPlace2);
+        roomImageViews.add(itemPlace3);
+
+        inventoryImageViews= new ArrayList<ImageView>();
+
+        inventoryImageViews.add(imgItem1);
+        inventoryImageViews.add(imgItem2);
+        inventoryImageViews.add(imgItem3);
+        inventoryImageViews.add(imgItem4);
+        inventoryImageViews.add(imgItem5);
 
         arrowDown.setUserData("syd");
         arrowLeft.setUserData("vest");
@@ -137,6 +159,10 @@ public class WorldOfZultController {
         arrowRight.setVisible(edges[1]);
         arrowDown.setVisible(edges[2]);
         arrowLeft.setVisible(edges[3]);
+
+        itemPlace1.addEventHandler(MouseEvent.MOUSE_CLICKED, pickUpButton);
+        itemPlace2.addEventHandler(MouseEvent.MOUSE_CLICKED, pickUpButton);
+        itemPlace3.addEventHandler(MouseEvent.MOUSE_CLICKED, pickUpButton);
     }
 
     @FXML
@@ -166,6 +192,8 @@ public class WorldOfZultController {
             arrowRight.setVisible(edges[1]);
             arrowDown.setVisible(edges[2]);
             arrowLeft.setVisible(edges[3]);
+
+            updateItemsInRoom();
         }
     };
 
@@ -187,6 +215,16 @@ public class WorldOfZultController {
         }
     };
 
+    EventHandler<MouseEvent> pickUpButton = new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent mouseEvent) {
+            ImageView imageView = (ImageView) mouseEvent.getSource();
+            domain.runCommand("opsaml " + imageView.getUserData());
+            updateItemsInRoom();
+            updateItemsInInventory();
+        }
+    };
+
     @FXML
     EventHandler<ActionEvent> infoButton = new EventHandler<ActionEvent>() {
         @Override
@@ -201,6 +239,39 @@ public class WorldOfZultController {
             return "file:src/main/resources/worldofzult/presentation/images/before/" + name + ".png";
         } else {
             return "file:src/main/resources/worldofzult/presentation/images/after/" + name + ".png";
+        }
+    }
+
+    public String findItemImage(String name) {
+         return "file:src/main/resources/worldofzult/presentation/images/items/" + name + ".png";
+    }
+
+    public void updateItemsInInventory() {
+        for (ImageView imageView : inventoryImageViews) {
+            imageView.setImage(null);
+            imageView.setUserData("");
+        }
+
+        ArrayList<String> itemsInInventory = domain.getItemsInInventory();
+
+        for (int i = 0; i < itemsInInventory.size(); i++) {
+            inventoryImageViews.get(i).setImage(new Image(findItemImage(itemsInInventory.get(i))));
+            inventoryImageViews.get(i).setUserData(itemsInInventory.get(i));
+        }
+    }
+
+    public void updateItemsInRoom() {
+        for (ImageView imageView : roomImageViews) {
+            imageView.setVisible(false);
+            imageView.setUserData("");
+        }
+
+        ArrayList<String> itemsInRoom = domain.getItemsInRoom();
+
+        for (int i = 0; i < itemsInRoom.size(); i++) {
+            roomImageViews.get(i).setVisible(true);
+            roomImageViews.get(i).setUserData(itemsInRoom.get(i));
+            roomImageViews.get(i).setImage(new Image(findItemImage(itemsInRoom.get(i))));
         }
     }
 }
