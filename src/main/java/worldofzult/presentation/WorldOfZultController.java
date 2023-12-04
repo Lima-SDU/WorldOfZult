@@ -18,12 +18,14 @@ import worldofzult.domain.Domain;
 import java.util.ArrayList;
 
 public class WorldOfZultController {
+    // MISCELLANEOUS OBJECTS
     @FXML
     public ImageView miniMap;
     public TextArea terminal;
     public ImageView imgGame;
 
     // BUTTONS
+    @FXML
     public Button talkButton;
     public Button helpButton;
 
@@ -45,6 +47,7 @@ public class WorldOfZultController {
     public MenuItem item1Info;
 
     // Inventory Item2
+    @FXML
     public MenuButton item2;
     public ImageView imgItem2;
     public MenuItem item2Give;
@@ -52,6 +55,7 @@ public class WorldOfZultController {
     public MenuItem item2Info;
 
     // Inventory Item3
+    @FXML
     public MenuButton item3;
     public ImageView imgItem3;
     public MenuItem item3Give;
@@ -59,6 +63,7 @@ public class WorldOfZultController {
     public MenuItem item3Info;
 
     // Inventory Item5
+    @FXML
     public MenuButton item4;
     public ImageView imgItem4;
     public MenuItem item4Give;
@@ -66,6 +71,7 @@ public class WorldOfZultController {
     public MenuItem item4Info;
 
     // Inventory Item5
+    @FXML
     public MenuButton item5;
     public ImageView imgItem5;
     public MenuItem item5Give;
@@ -73,6 +79,7 @@ public class WorldOfZultController {
     public MenuItem item5Info;
 
     // Spaces for displaying items in a room
+    @FXML
     public ImageView itemPlace1;
     public ImageView itemPlace2;
     public ImageView itemPlace3;
@@ -86,16 +93,37 @@ public class WorldOfZultController {
 
     @FXML
     public void initialize() {
+        // Create interface with domain-layer
         domain = new Domain();
+
+        // SETUP INITIAL ROOM-VIEW
+        // Set initial image for the room and minimap
         imgGame.setImage(new Image("file:src/main/resources/worldofzult/presentation/images/before/Indgang.png"));
         miniMap.setImage(new Image("file:src/main/resources/worldofzult/presentation/images/minimap/indgang.jpg"));
 
+        // Set initial visible arrows
+        boolean[] edges = domain.getCurrentExits();
+        arrowUp.setVisible(edges[0]);
+        arrowRight.setVisible(edges[1]);
+        arrowDown.setVisible(edges[2]);
+        arrowLeft.setVisible(edges[3]);
+
+        // Set side of the inventory menu
+        item1.setPopupSide(Side.TOP);
+        item2.setPopupSide(Side.TOP);
+        item3.setPopupSide(Side.TOP);
+        item4.setPopupSide(Side.TOP);
+        item5.setPopupSide(Side.TOP);
+
+        // INITIALIZE VARIABLES AND GROUPING VARIABLES IN ARRAYS
+        // Add ImageViews of the item placements to an ArrayList
         roomImageViews = new ArrayList<ImageView>();
 
         roomImageViews.add(itemPlace1);
         roomImageViews.add(itemPlace2);
         roomImageViews.add(itemPlace3);
 
+        // Add ImageViews of the item-inventory to an ArrayList
         inventoryImageViews = new ArrayList<ImageView>();
 
         inventoryImageViews.add(imgItem1);
@@ -104,6 +132,7 @@ public class WorldOfZultController {
         inventoryImageViews.add(imgItem4);
         inventoryImageViews.add(imgItem5);
 
+        // Add the MenuItem buttons for giving an item to an ArrayList
         giveButtons = new ArrayList<MenuItem>();
 
         giveButtons.add(item1Give);
@@ -112,6 +141,7 @@ public class WorldOfZultController {
         giveButtons.add(item4Give);
         giveButtons.add(item5Give);
 
+        // Add the MenuItem buttons for putting down an item to an ArrayList
         putDownButtons = new ArrayList<MenuItem>();
 
         putDownButtons.add(item1PutDown);
@@ -120,16 +150,12 @@ public class WorldOfZultController {
         putDownButtons.add(item4PutDown);
         putDownButtons.add(item5PutDown);
 
+        // ADDING USERDATA TO OBJECTS
+        // Set direction to arrows as UserData
         arrowDown.setUserData("syd");
         arrowLeft.setUserData("vest");
         arrowUp.setUserData("nord");
         arrowRight.setUserData("øst");
-
-        item1.setPopupSide(Side.TOP);
-        item2.setPopupSide(Side.TOP);
-        item3.setPopupSide(Side.TOP);
-        item4.setPopupSide(Side.TOP);
-        item5.setPopupSide(Side.TOP);
 
         item1PutDown.setUserData("Item1:PutDown");
         item2PutDown.setUserData("Item2:PutDown");
@@ -143,38 +169,39 @@ public class WorldOfZultController {
         item4Info.setUserData("Item4:Info");
         item5Info.setUserData("Item5:Info");
 
+        // ADDING EVENTHANDLERS
+        // Set EventHandler for Arrows to navigate around the game
         arrowDown.addEventHandler(MouseEvent.MOUSE_CLICKED, navigationButton);
         arrowLeft.addEventHandler(MouseEvent.MOUSE_CLICKED, navigationButton);
         arrowUp.addEventHandler(MouseEvent.MOUSE_CLICKED, navigationButton);
         arrowRight.addEventHandler(MouseEvent.MOUSE_CLICKED, navigationButton);
 
+        // Set EventHandler for ImageViews of the items in room to pickUpButton
+        itemPlace1.addEventHandler(MouseEvent.MOUSE_CLICKED, pickUpButton);
+        itemPlace2.addEventHandler(MouseEvent.MOUSE_CLICKED, pickUpButton);
+        itemPlace3.addEventHandler(MouseEvent.MOUSE_CLICKED, pickUpButton);
+
+        // SET ON ACTION EVENTHANDLERS
+        // Set MenuItems for giving items to giveButton
         item1Give.setOnAction(giveButton);
         item2Give.setOnAction(giveButton);
         item3Give.setOnAction(giveButton);
         item4Give.setOnAction(giveButton);
         item5Give.setOnAction(giveButton);
 
+        // Set MenuItems for putting down items to putDownButton
         item1PutDown.setOnAction(putDownButton);
         item2PutDown.setOnAction(putDownButton);
         item3PutDown.setOnAction(putDownButton);
         item4PutDown.setOnAction(putDownButton);
         item5PutDown.setOnAction(putDownButton);
 
+        // Set MenuItems for giving items information to infoButton
         item1Info.setOnAction(infoButton);
         item2Info.setOnAction(infoButton);
         item3Info.setOnAction(infoButton);
         item4Info.setOnAction(infoButton);
         item5Info.setOnAction(infoButton);
-
-        boolean[] edges = domain.getCurrentExits();
-        arrowUp.setVisible(edges[0]);
-        arrowRight.setVisible(edges[1]);
-        arrowDown.setVisible(edges[2]);
-        arrowLeft.setVisible(edges[3]);
-
-        itemPlace1.addEventHandler(MouseEvent.MOUSE_CLICKED, pickUpButton);
-        itemPlace2.addEventHandler(MouseEvent.MOUSE_CLICKED, pickUpButton);
-        itemPlace3.addEventHandler(MouseEvent.MOUSE_CLICKED, pickUpButton);
     }
 
     @FXML
@@ -192,6 +219,7 @@ public class WorldOfZultController {
     EventHandler<MouseEvent> navigationButton = new EventHandler<MouseEvent>() {
         @Override
         public void handle(MouseEvent mouseEvent) {
+            // Get source of event and retrieve UserData from it to run command. Then update Game
             Polygon button = (Polygon) mouseEvent.getSource();
             String direction = (String) button.getUserData();
             domain.runCommand("gå " + direction);
@@ -203,6 +231,7 @@ public class WorldOfZultController {
     EventHandler<ActionEvent> giveButton = new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent actionEvent) {
+            // Get source of event and retrieve UserData from it to run command. Then update Game
             MenuItem button = (MenuItem) actionEvent.getSource();
             terminal.appendText(button.getUserData().toString() + "\n");
             domain.runCommand("giv " + button.getUserData().toString());
@@ -214,6 +243,7 @@ public class WorldOfZultController {
     EventHandler<ActionEvent> putDownButton = new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent actionEvent) {
+            // Get source of event and retrieve UserData from it to run command. Then update Game
             MenuItem button = (MenuItem) actionEvent.getSource();
             domain.runCommand("læg " + button.getUserData().toString());
             updateGame();
@@ -223,6 +253,7 @@ public class WorldOfZultController {
     EventHandler<MouseEvent> pickUpButton = new EventHandler<MouseEvent>() {
         @Override
         public void handle(MouseEvent mouseEvent) {
+            // Get source of event and retrieve UserData from it to run command. Then update Game
             ImageView imageView = (ImageView) mouseEvent.getSource();
             domain.runCommand("opsaml " + imageView.getUserData());
             updateGame();
@@ -233,12 +264,15 @@ public class WorldOfZultController {
     EventHandler<ActionEvent> infoButton = new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent actionEvent) {
+            // Get source of event and retrieve UserData from it to run command
             MenuItem button = (MenuItem) actionEvent.getSource();
             terminal.appendText(button.getUserData().toString() + "\n");
         }
     };
 
     public String findGameImage(String name) {
+        // Check status for showing before- or after-images of the room and then return filepath
+        // Images for corridors without a group are placed in the after-folder
         if (domain.checkGroupStatus()) {
             return "file:src/main/resources/worldofzult/presentation/images/before/" + name + ".png";
         } else {
@@ -247,10 +281,12 @@ public class WorldOfZultController {
     }
 
     public String findItemImage(String name) {
+        // Return  filepath of the given item
          return "file:src/main/resources/worldofzult/presentation/images/items/" + name + ".png";
     }
 
     public void updateItemsInInventory() {
+        // RESET PLAYER-INVENTORY
         for (ImageView imageView : inventoryImageViews) {
             imageView.setImage(null);
             imageView.setUserData("");
@@ -261,8 +297,10 @@ public class WorldOfZultController {
             putDownButtons.get(i).setUserData("");
         }
 
+        // GET CURRENT ITEMS IN INVENTORY
         ArrayList<String> itemsInInventory = domain.getItemsInInventory();
 
+        // SHOW CURRENT ITEMS IN INVENTORY BY ITERATING THROUGH THEM
         for (int i = 0; i < itemsInInventory.size(); i++) {
             inventoryImageViews.get(i).setImage(new Image(findItemImage(itemsInInventory.get(i))));
             inventoryImageViews.get(i).setUserData(itemsInInventory.get(i));
@@ -272,13 +310,16 @@ public class WorldOfZultController {
     }
 
     public void updateItemsInRoom() {
+        // RESET ROOM-INVENTORY
         for (ImageView imageView : roomImageViews) {
             imageView.setVisible(false);
             imageView.setUserData("");
         }
 
+        // GET ITEMS IN THE ROOM
         ArrayList<String> itemsInRoom = domain.getItemsInRoom();
 
+        // SHOW ITEMS IN THE ROOM
         for (int i = 0; i < itemsInRoom.size(); i++) {
             roomImageViews.get(i).setVisible(true);
             roomImageViews.get(i).setUserData(itemsInRoom.get(i));
@@ -287,9 +328,11 @@ public class WorldOfZultController {
     }
 
     public void updateRoomImage() {
+        // FIND ROOM-IMAGE AND SHOW IT
         imgGame.setImage(new Image(findGameImage(domain.getCurrent())));
         miniMap.setImage(new Image("file:src/main/resources/worldofzult/presentation/images/minimap/" + domain.getCurrent() + ".jpg"));
 
+        // CHANGE VISIBILITY OF ARROWS TO MATCH ROOM
         boolean[] edges = domain.getCurrentExits();
         arrowUp.setVisible(edges[0]);
         arrowRight.setVisible(edges[1]);
@@ -298,6 +341,7 @@ public class WorldOfZultController {
     }
 
     public void updateGame() {
+        // UPDATES THE WHOLE GAME
         updateRoomImage();
         updateItemsInRoom();
         updateItemsInInventory();
