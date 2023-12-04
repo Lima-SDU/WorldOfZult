@@ -23,8 +23,8 @@ public class Domain {
        context.setPlayer(player);
     }
 
-    public void runCommand(String command) {
-        registry.dispatch(command);
+    public String runCommand(String command) {
+        return registry.dispatch(command);
     }
 
     public String getCurrent() {
