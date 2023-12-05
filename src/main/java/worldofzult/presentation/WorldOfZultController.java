@@ -3,7 +3,9 @@ package worldofzult.presentation;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Side;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
@@ -12,8 +14,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Polygon;
+import javafx.stage.Stage;
 import worldofzult.domain.Domain;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class WorldOfZultController {
@@ -242,7 +246,15 @@ public class WorldOfZultController {
             terminal.appendText(speech);
 
             if (domain.checkIsDone()) {
-                // Go to Quiz
+                try {
+                    Stage stage = (Stage) imgGame.getScene().getWindow();
+                    FXMLLoader fxmlLoader = new FXMLLoader(WOZApplication.class.getResource("quizfinal.fxml"));
+                    Scene scene = new Scene(fxmlLoader.load());
+                    stage.setScene(scene);
+
+                } catch (IOException e) {
+                    System.out.println(e.getMessage());
+                }
             }
         }
     };
