@@ -4,6 +4,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
@@ -12,11 +13,16 @@
 <?import javafx.scene.text.Font?>
 
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="worldofzult.presentation.StartScreenController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #FFEBCD;">
          <children>
-            <VBox layoutX="454.0" layoutY="196.0" prefHeight="469.0" prefWidth="316.0">
+            <TextField fx:id="inputName" layoutX="440.0" layoutY="198.0" prefHeight="47.0" prefWidth="314.0" promptText="Indtast navn:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <VBox layoutX="442.0" layoutY="284.0" prefHeight="498.0" prefWidth="314.0">
                <children>
                   <Label text="Vælg sværhedsgrad:">
                      <font>
@@ -26,7 +32,7 @@
                         <Insets bottom="20.0" left="45.0" />
                      </VBox.margin>
                   </Label>
-                  <Button fx:id="startButton1" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="110.0" prefWidth="310.0" style="-fx-background-color: #008000; -fx-text-fill: FFFFFF;" text="Normal" onMouseClicked="#startGameButton" userData="1">
+                  <Button fx:id="startButton1" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="110.0" prefWidth="310.0" style="-fx-background-color: #008000; -fx-text-fill: FFFFFF;" text="Normal">
                      <font>
                         <Font name="System Bold" size="59.0" />
                      </font>
@@ -40,7 +46,7 @@
                         <Insets bottom="30.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="startButton2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="110.0" prefWidth="310.0" style="-fx-background-color: #FFD700; -fx-text-fill: FFFFFF;" text="Svær" onMouseClicked="#startGameButton" userData="2">
+                  <Button fx:id="startButton2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="110.0" prefWidth="310.0" style="-fx-background-color: #FFD700; -fx-text-fill: FFFFFF;" text="Svær">
                      <font>
                         <Font name="System Bold" size="59.0" />
                      </font>
@@ -54,7 +60,7 @@
                         <Insets bottom="30.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="startButton3" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="110.0" prefWidth="310.0" style="-fx-background-color: #800000; -fx-text-fill: FFFFFF;" text="Ekstrem" onMouseClicked="#startGameButton" userData="3">
+                  <Button fx:id="startButton3" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="110.0" prefWidth="310.0" style="-fx-background-color: #800000; -fx-text-fill: FFFFFF;" text="Ekstrem">
                      <font>
                         <Font name="System Bold" size="59.0" />
                      </font>
@@ -70,7 +76,7 @@
                   </Button>
                </children>
             </VBox>
-            <Label layoutX="159.0" layoutY="-38.0" prefHeight="251.0" prefWidth="920.0" text="World Of Zult" textAlignment="CENTER">
+            <Label layoutX="161.0" layoutY="-27.0" prefHeight="202.0" prefWidth="920.0" text="World Of Zult" textAlignment="CENTER">
                <font>
                   <Font name="Baoli TC Regular" size="150.0" />
                </font>
