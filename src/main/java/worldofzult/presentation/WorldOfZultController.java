@@ -163,11 +163,11 @@ public class WorldOfZultController {
         item4PutDown.setUserData("Item4:PutDown");
         item5PutDown.setUserData("Item5:PutDown");
 
-        item1Info.setUserData("Item1:Info");
-        item2Info.setUserData("Item2:Info");
-        item3Info.setUserData("Item3:Info");
-        item4Info.setUserData("Item4:Info");
-        item5Info.setUserData("Item5:Info");
+        item1Info.setUserData("0");
+        item2Info.setUserData("1");
+        item3Info.setUserData("2");
+        item4Info.setUserData("3");
+        item5Info.setUserData("4");
 
         // ADDING EVENTHANDLERS
         // Set EventHandler for Arrows to navigate around the game
@@ -206,13 +206,14 @@ public class WorldOfZultController {
 
     @FXML
     public void talkButton() {
-        terminal.appendText("TALK - YAY\n");
+        String speech = domain.runCommand("tal");
+        terminal.appendText(speech);
     }
 
     @FXML
     public void helpButton() {
-        terminal.appendText("HELP - YAY\n");
-        domain.runCommand("hjælp");
+        String speech = domain.runCommand("hjælpgui");
+        terminal.appendText(speech);
     }
 
     @FXML
@@ -224,6 +225,7 @@ public class WorldOfZultController {
             String direction = (String) button.getUserData();
             domain.runCommand("gå " + direction);
             updateGame();
+            updateStatusBar();
         }
     };
 
@@ -233,9 +235,14 @@ public class WorldOfZultController {
         public void handle(ActionEvent actionEvent) {
             // Get source of event and retrieve UserData from it to run command. Then update Game
             MenuItem button = (MenuItem) actionEvent.getSource();
-            terminal.appendText(button.getUserData().toString() + "\n");
-            domain.runCommand("giv " + button.getUserData().toString());
+            String speech = domain.runCommand("giv " + button.getUserData().toString());
             updateGame();
+            updateStatusBar();
+            terminal.appendText(speech);
+
+            if (domain.checkIsDone()) {
+                // Go to Quiz
+            }
         }
     };
 
@@ -266,7 +273,8 @@ public class WorldOfZultController {
         public void handle(ActionEvent actionEvent) {
             // Get source of event and retrieve UserData from it to run command
             MenuItem button = (MenuItem) actionEvent.getSource();
-            terminal.appendText(button.getUserData().toString() + "\n");
+            String infoText = domain.getItemInformation(Integer.parseInt(button.getUserData().toString()));
+            terminal.appendText(infoText);
         }
     };
 
@@ -345,5 +353,12 @@ public class WorldOfZultController {
         updateRoomImage();
         updateItemsInRoom();
         updateItemsInInventory();
+    }
+
+    public void updateStatusBar() {
+        terminal.clear();
+        int count = domain.getCount();
+        int notHungryGroups = domain.getNonHungryGroupCount();
+        terminal.appendText("Counter: " + count + " | Status: " + notHungryGroups + "/5\n");
     }
 }

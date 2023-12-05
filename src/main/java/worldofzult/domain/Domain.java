@@ -1,10 +1,12 @@
 package worldofzult.domain;
 
+import worldofzult.domain.character.Group;
 import worldofzult.domain.commands.Registry;
 import worldofzult.domain.game.Game;
 import worldofzult.domain.inventory.Item;
 import worldofzult.domain.player.Player;
 import worldofzult.domain.session.Context;
+import worldofzult.domain.session.Counter;
 import worldofzult.domain.world.Node;
 import worldofzult.domain.world.Space;
 
@@ -69,5 +71,33 @@ public class Domain {
             itemsString.add(item.getName());
         }
         return itemsString;
+    }
+
+    public String getItemInformation(int index) {
+        ArrayList<Item> items = context.getPlayer().getInventory().getItems();
+
+        if (index > items.size() - 1) {
+            return "";
+        } else {
+            return items.get(index).getDescription();
+        }
+    }
+
+    public boolean checkIsDone() {
+        return context.isDone();
+    }
+
+    public int getCount() {
+        return Counter.getCount();
+    }
+
+    public int getNonHungryGroupCount() {
+        int notHungryGroups = 0;
+        for (Group group : context.getGroups()) {
+            if (!group.isHungry()) {
+                notHungryGroups++;
+            }
+        }
+        return notHungryGroups;
     }
 }
