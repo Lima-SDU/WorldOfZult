@@ -382,6 +382,9 @@ public class WorldOfZultController {
                 break;
             }
         }
+    }
 
+    public void setPlayerName(String playerName) {
+        domain.setPlayerName(playerName);
     }
 }

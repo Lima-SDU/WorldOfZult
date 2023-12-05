@@ -103,4 +103,8 @@ public class Domain {
     public void setCapacity(int capacity) {
         context.setCapacity(capacity);
     }
+
+    public void setPlayerName(String playerName) {
+        context.getPlayer().setName(playerName);
+    }
 }
