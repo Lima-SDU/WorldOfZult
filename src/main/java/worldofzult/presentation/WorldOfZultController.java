@@ -4,12 +4,14 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Polygon;
 import worldofzult.domain.Domain;
@@ -203,6 +205,8 @@ public class WorldOfZultController {
         item3Info.setOnAction(infoButton);
         item4Info.setOnAction(infoButton);
         item5Info.setOnAction(infoButton);
+
+        imgGame.getParent().getParent().addEventFilter(KeyEvent.KEY_RELEASED, navigationKey);
     }
 
     @FXML
@@ -216,6 +220,31 @@ public class WorldOfZultController {
         String speech = domain.runCommand("hjælpgui");
         terminal.appendText(speech);
     }
+
+    EventHandler<KeyEvent> navigationKey = new EventHandler<KeyEvent>() {
+        @Override
+        public void handle(KeyEvent keyEvent) {
+            // Get source of event and retrieve UserData from it to run command. Then update Game
+            String keyPressed = String.valueOf(keyEvent.getCode());
+
+            System.out.println(keyPressed);
+
+            if ("WASD".contains(keyPressed)) {
+                String direction = "";
+                switch (keyPressed) {
+                    case "W" -> direction = "nord";
+                    case "A" -> direction = "vest";
+                    case "S" -> direction = "syd";
+                    case "D" -> direction = "øst";
+                }
+                domain.runCommand("gå " + direction);
+            }
+
+            updateGame();
+            updateStatusBar();
+            keyEvent.consume();
+        }
+    };
 
     @FXML
     EventHandler<MouseEvent> navigationButton = new EventHandler<MouseEvent>() {
