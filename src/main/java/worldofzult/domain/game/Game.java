@@ -32,6 +32,7 @@ public class Game {
         registry.register("afslut", cmdExit);
         registry.register("gå", new CommandGo());
         registry.register("hjælp", new CommandHelp(registry));
+        registry.register("hjælpGUI", new CommandHelpGUI());
 
         //Add our own commands
         registry.register("giv", new CommandGiveItem());
