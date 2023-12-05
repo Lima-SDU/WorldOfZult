@@ -1,10 +1,12 @@
 package worldofzult.presentation;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import java.io.IOException;
@@ -24,7 +26,26 @@ public class StartScreenController {
        startButton3.setUserData(1);
 
        inputName.setFocusTraversable(false);
+
+       startButton1.getParent().addEventFilter(KeyEvent.KEY_RELEASED, difficultyKey);
    }
+
+    EventHandler<KeyEvent> difficultyKey = new EventHandler<KeyEvent>() {
+        @Override
+        public void handle(KeyEvent keyEvent) {
+            // Get source of event and retrieve UserData from it to run command. Then update Game
+            String keyPressed = String.valueOf(keyEvent.getCode());
+
+            if ("SPACE".contains(keyPressed)) {
+                try {
+                    startGame((Stage) startButton1.getScene().getWindow(), 1, inputName.getText());
+                } catch (IOException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+            keyEvent.consume();
+        }
+    };
 
     public void startGame(Stage stage, int capacity, String playerName) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(WOZApplication.class.getResource("guiny.fxml"));
