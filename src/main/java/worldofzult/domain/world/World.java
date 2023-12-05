@@ -14,17 +14,17 @@ public class World {
     // Constructor
     public World () {
         // Adds items
-        Item lys = new Item("Lyspære", "Denne pære udsender specifikke bølgelængder af lys, " +
+        Item lys = new Item("Lyspære\n", "Denne pære udsender specifikke bølgelængder af lys, " +
                 "ofte blåt og rødt, som er afgørende for fotosyntese og plantevækst." +
                 " Dette er også kaldet et vækstlys.");
-        Item  vandingssystem = new Item("Vandingssystem","Vandingssystemet opsættes på en farm," +
+        Item  vandingssystem = new Item("Vandingssystem\n","Vandingssystemet opsættes på en farm," +
                 " hvor afgrøderne ikke får nok vand fra naturen til at kunne gro." +
                 " Dette gør ellers golde områder til frugtbar jord.");
-        Item biokul = new Item("Biokul","Biokul modvirker dårlig jordkvalitet," +
+        Item biokul = new Item("Biokul\n","Biokul modvirker dårlig jordkvalitet," +
                 " som er et problem i nogle lande. Bedre jordkvalitet gør, at man kan dyrke flere varianter" +
                 " af afgrøder.");
-        Item maskine = new Item("Såmaskine", "Anvendes til såning af korn eller frø.");
-        Item opbevaringskasse = new Item("Opbevaringskasse", "Denne boks skærmer for vind og vejr," +
+        Item maskine = new Item("Såmaskine\n", "Anvendes til såning af korn eller frø.");
+        Item opbevaringskasse = new Item("Opbevaringskasse\n", "Denne boks skærmer for vind og vejr," +
                 " hvilket forlænger holdbarheden af maden.");
 
 
