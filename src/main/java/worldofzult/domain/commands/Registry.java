@@ -23,12 +23,14 @@ public class Registry {
     }
 
     // Handles and runs commands from player input
-    public void dispatch (String line) {
+    public String dispatch (String line) {
         String[] elements = line.split(" "); //Splits string into string-array. go door -> {go, door}
         String command = elements[0].toLowerCase(); // Get command from string-array
         String[] parameters = getParameters(elements); // Get parameters
         Command handler = getCommand(command); // Retrieves command. If not a recognized command, it returns null
-        (handler==null ? fallback : handler).execute(context, command, parameters); // Runs command if there is no error
+        String message = (handler==null ? fallback : handler).execute(context, command, parameters); // Runs command if there is no error
+        System.out.println(message);
+        return message;
     }
 
     // Get command

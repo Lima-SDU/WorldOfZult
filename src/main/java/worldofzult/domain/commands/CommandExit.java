@@ -10,7 +10,8 @@ public class CommandExit extends BaseCommand implements Command {
 
     // Runs Commands.CommandExit, which terminates the game with System.exit(0)
     @Override
-    public void execute (Context context, String command, String parameters[]) {
+    public String execute (Context context, String command, String parameters[]) {
         System.exit(0);; // Stops game
+        return "Exiting program";
     }
 }

@@ -12,11 +12,12 @@ public class CommandPutDownItem extends BaseCommand implements Command {
     }
 
     @Override
-    public void execute (Context context, String command, String parameters[]) {
+    public String execute (Context context, String command, String parameters[]) {
+        StringBuilder message = new StringBuilder();
+
         //Ensure that only 1 item is put down at a time
         if (guardEq(parameters, 1)) {
-            System.out.println("Kun et redskab kan lægges ad gangen");
-            return; //Stops command
+            return message.append("Kun et redskab kan lægges ad gangen").toString(); //Stops command
         }
 
         //Get current space from context
@@ -34,14 +35,14 @@ public class CommandPutDownItem extends BaseCommand implements Command {
                 if (item.getName().equalsIgnoreCase(parameters[0])) {
                     //Remove specified item from inventory and add item in space
                     spaceInventory.addItem(item);
-                    System.out.println("Lagde " + item.getName() + " ned");
+                    message.append("Lagde " + item.getName() + " ned");
                     playerInventory.removeItem(item);
-                    return;
+                    return message.toString();
                 }
             }
-            System.out.println("Fejl: Redskab ikke fundet");
+            return message.append("Fejl: Redskab ikke fundet").toString();
         } else {
-            System.out.println("Fejl: Der er ikke plads til flere items i rummet");
+            return message.append("Fejl: Der er ikke plads til flere items i rummet").toString();
         }
     }
 }

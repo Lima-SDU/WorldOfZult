@@ -9,11 +9,13 @@ public class CommandGo extends BaseCommand implements Command {
     }
 
     @Override
-    public void execute (Context context, String command, String[] parameters) {
-        if (guardEq(parameters, 1)) { // Checks for the right amount of parameters, so 1 room
-            System.out.println("Jeg ved ikke hvor det er henne 🤔"); // If too many parameters, give error
-            return; // Stops command
+    public String execute (Context context, String command, String[] parameters) {
+        StringBuilder message = new StringBuilder();
+
+        if (guardEq(parameters, 1)) { // Checks for the right amount of parameters, so if too many parameters, give error
+            return message.append("Jeg ved ikke hvor det er henne 🤔").toString(); // Stops command
         }
         context.transition(parameters[0]); // Transistions only if given one parameter
+        return message.toString();
     }
 }

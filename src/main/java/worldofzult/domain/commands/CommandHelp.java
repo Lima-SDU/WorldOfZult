@@ -12,8 +12,8 @@ public class CommandHelp extends BaseCommand implements Command {
     }
 
     @Override
-    public void execute (Context context, String command, String[] parameters) {
-        StringBuilder sb = new StringBuilder();
+    public String execute (Context context, String command, String[] parameters) {
+        StringBuilder message = new StringBuilder();
 
         String[] commandNames = registry.getCommandNames();
         Arrays.sort(commandNames);
@@ -28,15 +28,15 @@ public class CommandHelp extends BaseCommand implements Command {
         // present list of commands
 
         //System.out.println("Kommandoer:");
-        sb.append("Kommandoer:\n");
+        message.append("Kommandoer:\n");
 
         for (String commandName: commandNames) {
             String description = registry.getCommand(commandName).getDescription();
 
             //System.out.printf(" - %-"+max+"s %s%n", commandName, description);
-            sb.append(String.format(" - %-"+max+"s %s%n", commandName, description));
+            message.append(String.format(" - %-"+max+"s %s%n", commandName, description));
         }
 
-        System.out.println(sb.toString());
+        return message.toString();
     }
 }
