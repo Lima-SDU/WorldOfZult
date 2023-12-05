@@ -227,8 +227,6 @@ public class WorldOfZultController {
             // Get source of event and retrieve UserData from it to run command. Then update Game
             String keyPressed = String.valueOf(keyEvent.getCode());
 
-            System.out.println(keyPressed);
-
             if ("WASD".contains(keyPressed)) {
                 String direction = "";
                 switch (keyPressed) {
@@ -238,10 +236,9 @@ public class WorldOfZultController {
                     case "D" -> direction = "øst";
                 }
                 domain.runCommand("gå " + direction);
+                updateGame();
+                updateStatusBar();
             }
-
-            updateGame();
-            updateStatusBar();
             keyEvent.consume();
         }
     };
