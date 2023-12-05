@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #FFEBCD;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="1200.0">
+         <children>
+            <Line endX="979.8391723632812" endY="161.53656005859375" layoutX="-17.0" layoutY="-20.0" startX="212.16876220703125" startY="161.53656005859375" />
+            <Label contentDisplay="TEXT_ONLY" layoutX="380.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="152.0" prefWidth="442.0" text="TILLYKKE">
+               <font>
+                  <Font name="Baoli SC Regular" size="96.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0">
+         <top>
+            <Label prefHeight="107.0" prefWidth="500.0" text="Du klarede spillet og løste udfordringerne!    Se hvor godt du klarede dig:" wrapText="true" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+         </top>
+         <bottom>
+            <Label prefHeight="111.0" prefWidth="500.0" text="Sult er et stort problem i nogle dele af verden, så vi håber, at du lærte noget nyt og selvfølgelig at spillet var spændende" wrapText="true" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="50.0" />
+               </BorderPane.margin>
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+         </bottom>
+         <center>
+            <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #008000;">
+                     <StackPane.margin>
+                        <Insets bottom="50.0" left="15.0" right="15.0" top="50.0" />
+                     </StackPane.margin>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <children>
+                        <Label fx:id="moveLabel" prefHeight="64.0" prefWidth="287.0" style="-fx-text-fill: fffff;" text="Træk:" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets left="150.0" top="60.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="20.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="quizLabel" prefHeight="44.0" prefWidth="313.0" style="-fx-text-fill: fffff;" text="Quiz:" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets left="150.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+   </children>
+</VBox>
