@@ -29,17 +29,21 @@ public class CommandPickUpItem extends BaseCommand implements Command {
         //Get the spaces inventory
         Inventory spaceInventory = space.getInventory();
 
-        //Check if user input corresponds to an item in space
-        for (Item item : spaceInventory.getItems()) {
-            //If it does, place it in inventory and remove from space
-            if (item.getName().equalsIgnoreCase(parameters[0])) {
-                playerInventory.addItem(item);
-                message.append("Samlede " + item.getName() + " op");
-                spaceInventory.removeItem(item);
-                return message.toString(); //Stops command
+        if (playerInventory.getItems().size() < context.getCapacity()) {
+            //Check if user input corresponds to an item in space
+            for (Item item : spaceInventory.getItems()) {
+                //If it does, place it in inventory and remove from space
+                if (item.getName().equalsIgnoreCase(parameters[0])) {
+                    playerInventory.addItem(item);
+                    message.append("Samlede " + item.getName() + " op");
+                    spaceInventory.removeItem(item);
+                    return message.toString(); //Stops command
+                }
             }
+            //Prints error, if the input doesn't match any item
+            return message.append("Fejl: Redskab ikke fundet").toString();
+        } else {
+            return message.append("Fejl: Inventory er fyldt op").toString();
         }
-        //Prints error, if the input doesn't match any item
-        return message.append("Fejl: Redskab ikke fundet").toString();
     }
 }

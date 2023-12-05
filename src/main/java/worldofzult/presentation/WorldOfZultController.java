@@ -2,7 +2,6 @@ package worldofzult.presentation;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.event.EventTarget;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
 import javafx.scene.control.Button;
@@ -18,6 +17,8 @@ import worldofzult.domain.Domain;
 import java.util.ArrayList;
 
 public class WorldOfZultController {
+    public int capacity;
+
     // MISCELLANEOUS OBJECTS
     @FXML
     public ImageView miniMap;
@@ -28,7 +29,6 @@ public class WorldOfZultController {
     @FXML
     public Button talkButton;
     public Button helpButton;
-
 
     // ARROWS
     @FXML
@@ -253,8 +253,9 @@ public class WorldOfZultController {
         public void handle(ActionEvent actionEvent) {
             // Get source of event and retrieve UserData from it to run command. Then update Game
             MenuItem button = (MenuItem) actionEvent.getSource();
-            domain.runCommand("læg " + button.getUserData().toString());
+            String text = domain.runCommand("læg " + button.getUserData().toString());
             updateGame();
+            terminal.appendText(text);
         }
     };
 
@@ -263,8 +264,9 @@ public class WorldOfZultController {
         public void handle(MouseEvent mouseEvent) {
             // Get source of event and retrieve UserData from it to run command. Then update Game
             ImageView imageView = (ImageView) mouseEvent.getSource();
-            domain.runCommand("opsaml " + imageView.getUserData());
+            String text = domain.runCommand("opsaml " + imageView.getUserData());
             updateGame();
+            terminal.appendText(text);
         }
     };
 
@@ -361,5 +363,25 @@ public class WorldOfZultController {
         int count = domain.getCount();
         int notHungryGroups = domain.getNonHungryGroupCount();
         terminal.appendText("Counter: " + count + " | Status: " + notHungryGroups + "/5\n");
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+        domain.setCapacity(this.capacity);
+        switch (this.capacity) {
+            case 3: {
+                item4.setVisible(false);
+                item5.setVisible(false);
+                break;
+            }
+            case 1: {
+                item2.setVisible(false);
+                item3.setVisible(false);
+                item4.setVisible(false);
+                item5.setVisible(false);
+                break;
+            }
+        }
+
     }
 }

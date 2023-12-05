@@ -9,6 +9,9 @@ public class Context {
     //Holds current position and therefore current node.
     private Space current;
 
+    //Holds the difficulty level
+    private int capacity;
+
     //Holds all the groups in the game
     private ArrayList<Group> groups;
 
@@ -64,5 +67,13 @@ public class Context {
     // Return done
     public boolean isDone () {
         return done;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public int getCapacity() {
+        return this.capacity;
     }
 }

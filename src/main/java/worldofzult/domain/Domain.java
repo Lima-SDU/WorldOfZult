@@ -8,7 +8,6 @@ import worldofzult.domain.player.Player;
 import worldofzult.domain.session.Context;
 import worldofzult.domain.session.Counter;
 import worldofzult.domain.world.Node;
-import worldofzult.domain.world.Space;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -99,5 +98,9 @@ public class Domain {
             }
         }
         return notHungryGroups;
+    }
+
+    public void setCapacity(int capacity) {
+        context.setCapacity(capacity);
     }
 }
