@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="worldofzult.presentation.StartScreenController">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #FFEBCD;">
          <children>
@@ -32,7 +32,7 @@
                         <Insets bottom="20.0" left="45.0" />
                      </VBox.margin>
                   </Label>
-                  <Button fx:id="startButton1" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="110.0" prefWidth="310.0" style="-fx-background-color: #008000; -fx-text-fill: FFFFFF;" text="Normal">
+                  <Button fx:id="startButton1" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="110.0" prefWidth="310.0" style="-fx-background-color: #008000; -fx-text-fill: FFFFFF;" text="Normal" onMouseClicked="#startGameButton">
                      <font>
                         <Font name="System Bold" size="59.0" />
                      </font>
@@ -46,7 +46,7 @@
                         <Insets bottom="30.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="startButton2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="110.0" prefWidth="310.0" style="-fx-background-color: #FFD700; -fx-text-fill: FFFFFF;" text="Svær">
+                  <Button fx:id="startButton2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="110.0" prefWidth="310.0" style="-fx-background-color: #FFD700; -fx-text-fill: FFFFFF;" text="Svær" onMouseClicked="#startGameButton">
                      <font>
                         <Font name="System Bold" size="59.0" />
                      </font>
@@ -60,7 +60,7 @@
                         <Insets bottom="30.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="startButton3" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="110.0" prefWidth="310.0" style="-fx-background-color: #800000; -fx-text-fill: FFFFFF;" text="Ekstrem">
+                  <Button fx:id="startButton3" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="110.0" prefWidth="310.0" style="-fx-background-color: #800000; -fx-text-fill: FFFFFF;" text="Ekstrem" onMouseClicked="#startGameButton">
                      <font>
                         <Font name="System Bold" size="59.0" />
                      </font>

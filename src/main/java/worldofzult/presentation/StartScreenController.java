@@ -23,7 +23,7 @@ public class StartScreenController {
    }
 
     public void startGame(Stage stage, int capacity) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("guiny.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(WOZApplication.class.getResource("guiny.fxml"));
         //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("guiwoz.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
