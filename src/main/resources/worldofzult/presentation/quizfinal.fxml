@@ -29,7 +29,7 @@
          <children>
             <Label layoutX="124.0" layoutY="11.0" prefHeight="79.0" prefWidth="936.0" text="Tillykke! Du har hjulpet alle grupperne med nogle af deres problemer med fødevareproduktion og dermed hjulpet med at modvirke sult! Test din viden med denne quiz!" wrapText="true">
                <font>
-                  <Font size="24.0" />
+                  <Font size="22.0" />
                </font>
             </Label>
          </children>
