@@ -25,7 +25,7 @@ public class CommandTalk extends BaseCommand implements Command {
             return message.append(String.format(group.getSpeech1(),context.getPlayer().getName())).toString();
         } else {
             //Prints out an error, as there is no group in the space
-            return message.append("\n Der er ingen gruppe i rummet du kan snakke med\n").toString();
+            return message.append("\nDer er ingen gruppe i rummet du kan snakke med\n").toString();
         }
     }
 }

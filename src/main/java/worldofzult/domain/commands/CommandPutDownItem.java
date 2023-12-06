@@ -17,7 +17,7 @@ public class CommandPutDownItem extends BaseCommand implements Command {
 
         //Ensure that only 1 item is put down at a time
         if (guardEq(parameters, 1)) {
-            return message.append("Kun et redskab kan lægges ad gangen\n").toString(); //Stops command
+            return message.append("\nKun et redskab kan lægges ad gangen\n").toString(); //Stops command
         }
 
         //Get current space from context
