@@ -37,7 +37,7 @@ public class World {
                 " ned, derfor er vi meget afhængige af sæsonerne.\n \n", "\nLyspærer? Genialt! Det kan vi sætte op i drivhusene, så der også kan være lys når solen ikke skinner.\n \n");
         Group groupVand = new Group(vandingssystem, "\nHey %s! Her på vores gård bliver der dyrket en del frugt ," +
                 " Især bananer. Problemet er at mange af dem ender som uspiselige," +
-                " da de ender som små tøre gnallinger. Dette skyldes at jorden er alt for tør  " +
+                " da de ender som små tøre gnallinger. Dette skyldes at jorden er alt for tør.  " +
                 "Vi laver endda en regndans hver morgen, men det ser desværre ikke ud til at virke.\n \n", "\nWow! Et helt vandingssystem, Det vil vi gøre godt brug af. Nu behøver vi ikke lave flere regndanse. Mange tak!\n \n");
         Group groupKul = new Group(biokul, "\nHej %s, vi har rigtigt meget landbrugsjord, " +
                 "som vi rigtigt gerne vil dyrke vores afgrøder på. Vi har dog et stort problem, som forhindrer os i at dyrke noget på det. " +
