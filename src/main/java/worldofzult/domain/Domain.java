@@ -92,32 +92,39 @@ public class Domain {
         return context.isDone();
     }
 
+    // Returns the current amount of moves made
     public int getCount() {
         return context.getCount();
     }
 
+    // Returns the number of non hungry groups
     public int getNonHungryGroupCount() {
-        int notHungryGroups = 0;
+        int notHungryGroupCount = 0;
+        // Runs through the groups and checks if they are hungry, if they are -> add them to the count
         for (Group group : context.getGroups()) {
             if (!group.isHungry()) {
-                notHungryGroups++;
+                notHungryGroupCount++;
             }
         }
-        return notHungryGroups;
+        return notHungryGroupCount;
     }
 
+    // Sets the capacity in context, so that the player has less capacity in inventory
     public void setCapacity(int capacity) {
         context.setCapacity(capacity);
     }
 
+    // Sets the players name in context
     public void setPlayerName(String playerName) {
         context.getPlayer().setName(playerName);
     }
 
+    // Given a question index and an answer, returns whether it is right or wrong
     public boolean checkQuizAnswer(int index, String answer) {
         return quiz.checkAnswer(index, answer);
     }
 
+    // Runs the quiz - used only for CLI
     public void runQuizCLI() {
         quiz.run();
     }
