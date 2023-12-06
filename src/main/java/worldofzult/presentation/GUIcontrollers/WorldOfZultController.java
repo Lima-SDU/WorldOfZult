@@ -17,11 +17,11 @@ import javafx.scene.shape.Polygon;
 import javafx.stage.Stage;
 import worldofzult.domain.Domain;
 import worldofzult.presentation.WOZApplication;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class WorldOfZultController {
+    // DIFFICULTY
     public int capacity;
 
     // MISCELLANEOUS OBJECTS
@@ -225,22 +225,26 @@ public class WorldOfZultController {
         // Set action for quizButton
         goToQuizButton.setOnAction(goToQuiz);
 
+        // Updates the GUI, as the game loads.
         updateStatusBar();
         updateGame();
     }
 
+    // Runs the talk command and prints the result to the terminal
     @FXML
     public void talkButton() {
         String speech = domain.runCommand("tal");
         terminal.appendText(speech);
     }
 
+    // Runs the helpGUI command and prints the result to the terminal
     @FXML
     public void helpButton() {
         String speech = domain.runCommand("hjælpgui");
         terminal.appendText(speech);
     }
 
+    // Runs the go command and updates the GUI
     @FXML
     EventHandler<MouseEvent> navigationButton = new EventHandler<MouseEvent>() {
         @Override
@@ -254,6 +258,7 @@ public class WorldOfZultController {
         }
     };
 
+    // Loads the Quiz scene and its controller and sends the status to the quiz controller
     @FXML
     EventHandler<ActionEvent> goToQuiz = new EventHandler<ActionEvent>() {
         @Override
@@ -271,6 +276,7 @@ public class WorldOfZultController {
         }
     };
 
+    // Runs the give command with the item, updates the GUI and if the game is done -> display the goToQuizButton
     @FXML
     EventHandler<ActionEvent> giveButton = new EventHandler<ActionEvent>() {
         @Override
@@ -287,6 +293,7 @@ public class WorldOfZultController {
         }
     };
 
+    // Runs the putdown command with the item name, prints the action to the terminal and update the GUI
     @FXML
     EventHandler<ActionEvent> putDownButton = new EventHandler<ActionEvent>() {
         @Override
@@ -299,6 +306,8 @@ public class WorldOfZultController {
         }
     };
 
+    // Runs the pickup command with the item name, prints the action to the terminal and updates the GUI
+    @FXML
     EventHandler<MouseEvent> pickUpButton = new EventHandler<MouseEvent>() {
         @Override
         public void handle(MouseEvent mouseEvent) {
@@ -307,10 +316,10 @@ public class WorldOfZultController {
             String text = domain.runCommand("opsaml " + imageView.getUserData());
             updateGame();
             terminal.appendText(text);
-
         }
     };
 
+    // Gets info about the item, and displays it in terminal
     @FXML
     EventHandler<ActionEvent> infoButton = new EventHandler<ActionEvent>() {
         @Override
@@ -401,6 +410,7 @@ public class WorldOfZultController {
         updateItemsInInventory();
     }
 
+    // Clears the terminal and prints the count and status
     public void updateStatusBar() {
         terminal.clear();
         int count = domain.getCount();
@@ -408,6 +418,7 @@ public class WorldOfZultController {
         terminal.appendText("Counter: " + count + " | Status: " + notHungryGroups + "/5\n");
     }
 
+    // Reflects the chosen capacity in the GUI, by setting visibility of the MenuButtons
     public void setCapacity(int capacity) {
         this.capacity = capacity;
         domain.setCapacity(this.capacity);
