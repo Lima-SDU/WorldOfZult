@@ -188,7 +188,7 @@
                   </VBox>
                   <Pane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <Button layoutX="282.0" layoutY="58.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="227.0" style="-fx-background-color: #008000; -fx-font-size: 45px; -fx-text-fill: #FFFFFF;" text="Færdig!" textFill="WHITE">
+                        <Button fx:id="submitButton" layoutX="282.0" layoutY="58.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="227.0" style="-fx-background-color: #008000; -fx-font-size: 45px; -fx-text-fill: #FFFFFF;" text="Færdig!" textFill="WHITE" onMouseClicked="#checkAnswers">
                            <font>
                               <Font size="32.0" />
                            </font>
