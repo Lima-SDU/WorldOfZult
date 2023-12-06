@@ -27,7 +27,8 @@ public class CLIApplication {
         while (domain.checkIsDone()==false) { // Runs game if not done
             System.out.print("> ");
             String line = scanner.nextLine(); // Get next line from commandline input
-            domain.runCommand(line); // Run command from registry
+            String message = domain.runCommand(line); // Run command from registry
+            System.out.println(message);
         }
 
         System.out.println("Godt gået " + name + "! Du har klaret spillet, men der er en quiz inden spillet er helt slut. Den skal teste, hvor opmærksom du har været undervejs i spillet. Der kommer en række spørgsmål og de har hver tre valgmuligheder, hvor én af dem er korrekt. Du skal vælge det rigtige svar.");

@@ -28,9 +28,7 @@ public class Registry {
         String command = elements[0].toLowerCase(); // Get command from string-array
         String[] parameters = getParameters(elements); // Get parameters
         Command handler = getCommand(command); // Retrieves command. If not a recognized command, it returns null
-        String message = (handler==null ? fallback : handler).execute(context, command, parameters); // Runs command if there is no error
-        System.out.println(message);
-        return message;
+        return (handler==null ? fallback : handler).execute(context, command, parameters); // Runs command if there is no error
     }
 
     // Get command
