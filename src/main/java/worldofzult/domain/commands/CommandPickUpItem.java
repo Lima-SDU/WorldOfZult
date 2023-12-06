@@ -35,7 +35,7 @@ public class CommandPickUpItem extends BaseCommand implements Command {
                 //If it does, place it in inventory and remove from space
                 if (item.getName().equalsIgnoreCase(parameters[0])) {
                     playerInventory.addItem(item);
-                    message.append("Samlede " + item.getName() + " op");
+                    message.append("Samlede " + item.getName() + " op \n"+item.getDescription());
                     spaceInventory.removeItem(item);
                     return message.toString(); //Stops command
                 }
