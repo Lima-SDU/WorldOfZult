@@ -8,12 +8,11 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="worldofzult.presentation.IntroScreenController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="worldofzult.presentation.IntroScreenController">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #FFEBCD;">
          <children>
-            <Button fx:id="startButton" layoutX="373.0" layoutY="366.0" mnemonicParsing="false" prefHeight="187.0" prefWidth="460.0" style="-fx-background-color: #008000; -fx-text-fill: FFFFFF;" text="Start spil" onMouseClicked="#goToStartScreen">
+            <Button fx:id="startButton" layoutX="369.0" layoutY="499.0" mnemonicParsing="false" onMouseClicked="#goToStartScreen" prefHeight="187.0" prefWidth="460.0" style="-fx-background-color: #008000; -fx-text-fill: FFFFFF;" text="Start spil">
                <font>
                   <Font name="System Bold" size="87.0" />
                </font>
@@ -24,9 +23,14 @@
                   <InnerShadow />
                </effect>
             </Button>
-            <Label layoutX="157.0" layoutY="-12.0" prefHeight="318.0" prefWidth="920.0" text="World Of Zult" textAlignment="CENTER">
+            <Label layoutX="153.0" layoutY="-61.0" prefHeight="318.0" prefWidth="920.0" text="World Of Zult" textAlignment="CENTER">
                <font>
                   <Font name="Baoli TC Regular" size="150.0" />
+               </font>
+            </Label>
+            <Label layoutX="110.0" layoutY="167.0" prefHeight="358.0" prefWidth="988.0" text="Velkommen til World of Zult! Dette spil handler om at stoppe sult ved at udforske denne fiktive verden, som er fyldt med grupper af mennesker, der alle sulter af forskellige årsager. Dit mål er at finde ud af hvad de har brug for og opsamle og aflevere de rigtige redskaber til de rigtige grupper. Prøv at snakke med de forskellige grupper for at høre hvad de har brug for. Lyt godt med, for der kommer en quiz til sidst." textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="25.0" />
                </font>
             </Label>
          </children>
