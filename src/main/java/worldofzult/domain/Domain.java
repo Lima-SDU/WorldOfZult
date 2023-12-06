@@ -24,7 +24,7 @@ public class Domain {
        game.initRegistry();
        context = game.getContext();
        registry = game.getRegistry();
-       Player player = new Player("");
+       Player player = new Player("Spiller");
        context.setPlayer(player);
        this.quiz = new Quiz();
        quiz.initQuiz();

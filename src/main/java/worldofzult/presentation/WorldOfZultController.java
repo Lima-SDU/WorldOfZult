@@ -280,7 +280,6 @@ public class WorldOfZultController {
             updateGame();
             updateStatusBar();
             terminal.appendText(speech);
-
             if (domain.checkIsDone()) {
                 goToQuizButton.setVisible(true);
             }
