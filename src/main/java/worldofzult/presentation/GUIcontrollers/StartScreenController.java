@@ -1,4 +1,4 @@
-package worldofzult.presentation;
+package worldofzult.presentation.GUIcontrollers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +7,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import worldofzult.presentation.WOZApplication;
+
 import java.io.IOException;
 
 public class StartScreenController {
@@ -27,7 +29,7 @@ public class StartScreenController {
    }
 
     public void startGame(Stage stage, int capacity, String playerName) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(WOZApplication.class.getResource("guiny.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(WOZApplication.class.getResource("game.fxml"));
         //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("guiwoz.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);

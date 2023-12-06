@@ -19,7 +19,7 @@
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="800.0" maxWidth="1200" minHeight="800" minWidth="1200" prefHeight="800.0" prefWidth="1200.0" style="resize: none;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="worldofzult.presentation.WorldOfZultController">
+<GridPane maxHeight="800.0" maxWidth="1200" minHeight="800" minWidth="1200" prefHeight="800.0" prefWidth="1200.0" style="resize: none;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="worldofzult.presentation.GUIcontrollers.WorldOfZultController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="990.0" minWidth="10.0" prefWidth="754.8316040039062" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="496.0343017578125" minWidth="0.0" prefWidth="235.16839599609375" />

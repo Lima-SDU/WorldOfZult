@@ -1,4 +1,4 @@
-package worldofzult.presentation;
+package worldofzult.presentation.GUIcontrollers;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -16,6 +16,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Polygon;
 import javafx.stage.Stage;
 import worldofzult.domain.Domain;
+import worldofzult.presentation.WOZApplication;
 
 import java.io.IOException;
 import java.util.ArrayList;
