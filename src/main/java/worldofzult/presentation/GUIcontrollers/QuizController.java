@@ -14,10 +14,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class QuizController {
+    // Variables for storing the results and a domain
     private int gameResult;
     private int quizResult;
     private Domain domain;
 
+    // FXML Elements
+    // Radiobuttons for answers
     @FXML
     public RadioButton button1_1;
     public RadioButton button1_2;
@@ -35,34 +38,42 @@ public class QuizController {
     public RadioButton button5_2;
     public RadioButton button5_3;
 
+    // Submitbutton
     public Button submitButton;
 
+    // ToggleGroups for RadioButtons
     public ToggleGroup tGroup1;
     public ToggleGroup tGroup2;
     public ToggleGroup tGroup3;
     public ToggleGroup tGroup4;
     public ToggleGroup tGroup5;
 
+    // List of ToggleGroups
     public ArrayList<ToggleGroup> groups;
 
     @FXML
     public void initialize() {
+        // Instantiating domain for the quiz
         domain = new Domain();
 
+        // Instantiating the toggle groups
         tGroup1 = new ToggleGroup();
         tGroup2 = new ToggleGroup();
         tGroup3 = new ToggleGroup();
         tGroup4 = new ToggleGroup();
         tGroup5 = new ToggleGroup();
 
+        // Instantiating the list of ToggleGroups
         groups = new ArrayList<ToggleGroup>();
 
+        // Adding the ToggleGroups to the list
         groups.add(tGroup1);
         groups.add(tGroup2);
         groups.add(tGroup3);
         groups.add(tGroup4);
         groups.add(tGroup5);
 
+        // Adding the RadioButtons to their ToggleGroups
         button1_1.setToggleGroup(tGroup1);
         button1_2.setToggleGroup(tGroup1);
         button1_3.setToggleGroup(tGroup1);
@@ -83,6 +94,7 @@ public class QuizController {
         button5_2.setToggleGroup(tGroup5);
         button5_3.setToggleGroup(tGroup5);
 
+        // Setting userdata for each RadioButton in each ToggleGroup
         for (ToggleGroup group : groups) {
             for (int i = 0; i < group.getToggles().size(); i++) {
                 RadioButton button = (RadioButton) group.getToggles().get(i);
@@ -95,19 +107,23 @@ public class QuizController {
         }
     }
 
+    // Method for storing the game result
     public void storeResult(int gameResult) {
         this.gameResult = gameResult;
         System.out.println(this.gameResult);
     }
 
+    // Executed by submitbutton -> checks answers via Domain and runs goToEndScreen
     public void checkAnswers() {
         int result = 0;
+
         for (int i = 0; i < groups.size(); i++) {
             RadioButton button = (RadioButton) groups.get(i).getSelectedToggle();
             if (button != null && domain.checkQuizAnswer(i, button.getUserData().toString())) {
                 result++;
             }
         }
+
         quizResult = result;
 
         try {
@@ -117,6 +133,7 @@ public class QuizController {
         }
     }
 
+    // Sets the scene to the EndScreen
     public void goToEndScreen(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(WOZApplication.class.getResource("spilslut.fxml"));
         Scene scene = new Scene(fxmlLoader.load());

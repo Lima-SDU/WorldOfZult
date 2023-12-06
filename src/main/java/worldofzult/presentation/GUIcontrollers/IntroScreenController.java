@@ -10,9 +10,11 @@ import worldofzult.presentation.WOZApplication;
 import java.io.IOException;
 
 public class IntroScreenController {
+    // FXML Element
     @FXML
     public Button startButton;
 
+    // Set scene to the startscreen
     public void goToStartScreen() {
         try {
             Stage stage = (Stage) startButton.getScene().getWindow();
