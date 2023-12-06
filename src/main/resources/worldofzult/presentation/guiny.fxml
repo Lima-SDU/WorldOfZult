@@ -31,7 +31,7 @@
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="553.0" prefWidth="340.5" GridPane.columnIndex="1">
          <children>
             <ImageView fx:id="miniMap" fitHeight="204.0" fitWidth="339.0" pickOnBounds="true" preserveRatio="true" />
-            <TextArea fx:id="terminal" editable="false" prefHeight="352.0" prefWidth="341.0" style="-fx-opacity: 1;" wrapText="true" >
+            <TextArea fx:id="terminal" editable="false" prefHeight="352.0" prefWidth="341.0" style="-fx-opacity: 1;" wrapText="true">
              <font>
                  <Font size="18.0" />
              </font>
@@ -69,6 +69,17 @@
                   <ImageView fx:id="itemPlace1" fitHeight="100.0" fitWidth="100.0" layoutX="170.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="401.0" />
                   <ImageView fx:id="itemPlace2" fitHeight="100.0" fitWidth="100.0" layoutX="277.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="itemPlace3" fitHeight="100.0" fitWidth="100.0" layoutX="440.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button fx:id="goToQuizButton" layoutX="288.0" layoutY="246.0" mnemonicParsing="false" onMouseClicked="#talkButton" prefHeight="70.0" prefWidth="281.0" text="Fortsæt til quiz" visible="false">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                </children>
             </AnchorPane>
          </children>

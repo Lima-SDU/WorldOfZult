@@ -9,11 +9,11 @@
 <?import javafx.scene.text.Font?>
 
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="worldofzult.presentation.IntroScreenController">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #FFEBCD;">
          <children>
-            <Button fx:id="startButton" layoutX="373.0" layoutY="366.0" mnemonicParsing="false" prefHeight="187.0" prefWidth="460.0" style="-fx-background-color: #008000; -fx-text-fill: FFFFFF;" text="Start spil">
+            <Button fx:id="startButton" layoutX="373.0" layoutY="366.0" mnemonicParsing="false" prefHeight="187.0" prefWidth="460.0" style="-fx-background-color: #008000; -fx-text-fill: FFFFFF;" text="Start spil" onMouseClicked="#goToStartScreen">
                <font>
                   <Font name="System Bold" size="87.0" />
                </font>

@@ -88,6 +88,10 @@ public class WorldOfZultController {
     public ImageView itemPlace2;
     public ImageView itemPlace3;
 
+    // Button for transitioning to the quiz
+    @FXML
+    public Button goToQuizButton;
+
     // NON-FXML OBJECTS
     public Domain domain;
     public ArrayList<ImageView> roomImageViews;
@@ -207,6 +211,9 @@ public class WorldOfZultController {
         item3Info.setOnAction(infoButton);
         item4Info.setOnAction(infoButton);
         item5Info.setOnAction(infoButton);
+
+        // Set action for quizButton
+        goToQuizButton.setOnAction(goToQuiz);
     }
 
     @FXML
@@ -235,6 +242,23 @@ public class WorldOfZultController {
     };
 
     @FXML
+    EventHandler<ActionEvent> goToQuiz = new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent actionEvent) {
+            try {
+                Stage stage = (Stage) imgGame.getScene().getWindow();
+                FXMLLoader fxmlLoader = new FXMLLoader(WOZApplication.class.getResource("quizfinal.fxml"));
+                Scene scene = new Scene(fxmlLoader.load());
+                stage.setScene(scene);
+                QuizController controller = fxmlLoader.getController();
+                controller.storeResult(domain.getCount());
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    };
+
+    @FXML
     EventHandler<ActionEvent> giveButton = new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent actionEvent) {
@@ -246,17 +270,7 @@ public class WorldOfZultController {
             terminal.appendText(speech);
 
             if (domain.checkIsDone()) {
-                try {
-                    Thread.sleep(3000);
-                } catch (InterruptedException e) {
-                    System.out.println(e.getMessage());
-                }
-
-                try {
-                    startQuiz((Stage) imgGame.getScene().getWindow());
-                } catch (IOException e) {
-                    System.out.println(e.getMessage());
-                }
+                goToQuizButton.setVisible(true);
             }
         }
     };
@@ -400,13 +414,5 @@ public class WorldOfZultController {
 
     public void setPlayerName(String playerName) {
         domain.setPlayerName(playerName);
-    }
-
-    private void startQuiz(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(WOZApplication.class.getResource("quizfinal.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setScene(scene);
-        QuizController controller = fxmlLoader.getController();
-        controller.storeResult(domain.getCount());
     }
 }
