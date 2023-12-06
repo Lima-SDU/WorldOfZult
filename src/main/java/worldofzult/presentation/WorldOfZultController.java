@@ -247,6 +247,12 @@ public class WorldOfZultController {
 
             if (domain.checkIsDone()) {
                 try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    System.out.println(e.getMessage());
+                }
+
+                try {
                     startQuiz((Stage) imgGame.getScene().getWindow());
                 } catch (IOException e) {
                     System.out.println(e.getMessage());

@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #FFEBCD;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #FFEBCD;" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="worldofzult.presentation.EndScreenController">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="1200.0">
          <children>
@@ -51,7 +51,7 @@
                         <DropShadow />
                      </effect>
                      <children>
-                        <Label fx:id="moveLabel" prefHeight="64.0" prefWidth="287.0" style="-fx-text-fill: fffff;" text="Træk:" textFill="WHITE">
+                        <Label fx:id="moveLabel" prefHeight="64.0" prefWidth="287.0" style="-fx-text-fill: #ffffff;" text="Træk:" textFill="WHITE">
                            <VBox.margin>
                               <Insets left="150.0" top="60.0" />
                            </VBox.margin>
@@ -62,7 +62,7 @@
                               <Insets bottom="20.0" />
                            </padding>
                         </Label>
-                        <Label fx:id="quizLabel" prefHeight="44.0" prefWidth="313.0" style="-fx-text-fill: fffff;" text="Quiz:" textFill="WHITE">
+                        <Label fx:id="quizLabel" prefHeight="44.0" prefWidth="313.0" style="-fx-text-fill: #ffffff;" text="Quiz:" textFill="WHITE">
                            <VBox.margin>
                               <Insets left="150.0" />
                            </VBox.margin>

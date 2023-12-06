@@ -1,12 +1,16 @@
 package worldofzult.presentation;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
+import javafx.stage.Stage;
 import worldofzult.domain.Domain;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class QuizController {
@@ -105,5 +109,19 @@ public class QuizController {
             }
         }
         quizResult = result;
+
+        try {
+            goToEndScreen((Stage) submitButton.getScene().getWindow());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void goToEndScreen(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(WOZApplication.class.getResource("spilslut.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        EndScreenController controller = fxmlLoader.getController();
+        controller.storeResults(this.gameResult, this.quizResult);
     }
 }
