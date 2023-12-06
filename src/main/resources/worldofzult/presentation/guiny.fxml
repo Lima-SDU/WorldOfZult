@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.ToolBar?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Polygon?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<GridPane maxHeight="800.0" maxWidth="1200" minHeight="800" minWidth="1200" prefHeight="800.0" prefWidth="1200.0" style="resize: none;" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="worldofzult.presentation.WorldOfZultController">
+<GridPane maxHeight="800.0" maxWidth="1200" minHeight="800" minWidth="1200" prefHeight="800.0" prefWidth="1200.0" style="resize: none;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="worldofzult.presentation.WorldOfZultController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="990.0" minWidth="10.0" prefWidth="754.8316040039062" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="496.0343017578125" minWidth="0.0" prefWidth="235.16839599609375" />
@@ -30,7 +20,13 @@
    <children>
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="553.0" prefWidth="340.5" GridPane.columnIndex="1">
          <children>
-            <ImageView fx:id="miniMap" fitHeight="204.0" fitWidth="339.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="miniMap" fitHeight="204.0" fitWidth="339.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/minimap/Bjergkæde.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="17.0" />
+               </VBox.margin></ImageView>
             <TextArea fx:id="terminal" editable="false" prefHeight="352.0" prefWidth="341.0" style="-fx-opacity: 1;" wrapText="true">
              <font>
                  <Font size="18.0" />
@@ -40,10 +36,7 @@
       </VBox>
       <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="553.0" prefWidth="860.0" style="-fx-border-width: 2; -fx-border-style: solid; -fx-border-color: #000000;">
          <children>
-            <ImageView fx:id="imgGame" fitHeight="553.0" fitWidth="856.0" pickOnBounds="true">
-               <image>
-                  <Image url="@images/before/Monsunland.png" />
-               </image></ImageView>
+            <ImageView fx:id="imgGame" fitHeight="553.0" fitWidth="856.0" pickOnBounds="true" />
             <AnchorPane prefHeight="549.0" prefWidth="867.0">
                <children>
                   <Polygon fx:id="arrowDown" fill="#c9c5c591" layoutX="413.0" layoutY="497.0" points="-9.75311279296875, 3.507843017578125, 14.74688720703125, 48.507843017578125, 39.0902099609375, 3.666656494140625" stroke="WHITE" strokeType="INSIDE">
