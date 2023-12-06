@@ -7,7 +7,7 @@ import worldofzult.domain.world.Space;
 public class CommandTalk extends BaseCommand implements Command {
     //Description of the command
     public CommandTalk() {
-        description = "Brug til at tale med de forskellige grupper i verden. Udføres ved at skrive “tal” i et rum der indeholder en gruppe";
+        description = "Brug til at tale med de forskellige grupper i verden. Udføres ved at skrive “tal” i et rum der indeholder en gruppe\n";
     }
     @Override
     public String execute (Context context, String command, String parameters[]) {
@@ -25,7 +25,7 @@ public class CommandTalk extends BaseCommand implements Command {
             return message.append(String.format(group.getSpeech1(),context.getPlayer().getName())).toString();
         } else {
             //Prints out an error, as there is no group in the space
-            return message.append("Der er ingen gruppe i rummet du kan snakke med").toString();
+            return message.append("\n Der er ingen gruppe i rummet du kan snakke med\n").toString();
         }
     }
 }

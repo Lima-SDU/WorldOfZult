@@ -17,7 +17,7 @@ public class CommandPickUpItem extends BaseCommand implements Command {
 
         //Ensure that only 1 item is picked up at a time
         if (guardEq(parameters, 1)) {
-            return message.append("Kun et redskab kan samles op ad gangen").toString(); //Stops command
+            return message.append("Kun et redskab kan samles op ad gangen\n").toString(); //Stops command
         }
 
         //Get current space from context

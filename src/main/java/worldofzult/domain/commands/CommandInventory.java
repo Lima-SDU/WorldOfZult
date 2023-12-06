@@ -27,7 +27,7 @@ public class CommandInventory extends BaseCommand implements Command {
                 message.append(item.getName());
             }
         } else {
-            message.append("Der er ingen redskaber i rummet");
+            message.append("Der er ingen redskaber i rummet\n");
         }
 
         //Get the players inventory
@@ -40,7 +40,7 @@ public class CommandInventory extends BaseCommand implements Command {
                 message.append(item.getName());
             }
         } else {
-            message.append("Der er ingen redskaber i inventaret");
+            message.append("Der er ingen redskaber i inventaret\n");
         }
 
         return message.toString();
