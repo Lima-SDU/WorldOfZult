@@ -21,8 +21,12 @@ public class CommandTalk extends BaseCommand implements Command {
 
         //If space has group, print out the groups message
         if (group != null) {
-            //Prints out the groups message
-            return message.append(String.format(group.getSpeech1(),context.getPlayer().getName())).toString();
+            //Returns two different messages, depending on the hungry status of the group
+            if (group.isHungry()) {
+                return message.append(String.format(group.getSpeech1(),context.getPlayer().getName())).toString();
+            } else {
+                return message.append(group.getSpeech2()).toString();
+            }
         } else {
             //Prints out an error, as there is no group in the space
             return message.append("\nDer er ingen gruppe i rummet du kan snakke med\n").toString();

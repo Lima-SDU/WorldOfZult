@@ -36,7 +36,7 @@ public class CommandGiveItem extends BaseCommand implements Command {
             if (group.checkItem(parameters[0])) {
                 playerInventory.removeItem(playerInventory.getItem(parameters[0]));
                 group.setHunger(false);
-                message.append(parameters[0] + " blev givet til gruppen");
+                message.append(parameters[0] + " blev givet til gruppen\n");
                 message.append(group.getSpeech2());
 
                 boolean isDone = true;
