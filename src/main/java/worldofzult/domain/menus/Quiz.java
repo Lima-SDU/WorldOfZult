@@ -4,14 +4,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Quiz {
-    private ArrayList<Question> questions;
-    private int score = 0;
+    private ArrayList<Question> questions; // Contains arraylist of questions
+    private int score = 0; // Score
 
+    // Constructor
     public Quiz() {
         this.questions = new ArrayList<Question>();
     }
 
+    // Run quiz, used in CLI
     public void run() {
+        // Go through each question and their answers and print them
         for (Question question : questions) {
             System.out.println(question.getQuestion());
 
@@ -19,6 +22,7 @@ public class Quiz {
                 System.out.println(answer);
             }
 
+            // Ask the player for the correct answer and prompt an answer
             Scanner scanner = new Scanner(System.in);
             System.out.print("Vælg svarmulighed: ");
             String ans = scanner.nextLine();
@@ -32,10 +36,12 @@ public class Quiz {
         System.out.println("Quiz score: " + score + "/" + questions.size());
     }
 
+    // Add additional question
     public void addQuestion(Question question) {
         this.questions.add(question);
     }
 
+    // Initialize quiz
     public void initQuiz() {
         Question q1 = new Question("Hvad er det primære formål med vækstlys i landbruget og indendørs havebrug?", new String[]{"A: Forhindre skadedyr", "B: Fremme fotosyntese og plantevækst", "C: Regulere temperatur i drivhuset"}, "B");
         Question q2 = new Question("Hvordan hjælper et vandingssystem med at forbedre landbrugsproduktionen?", new String[]{"A: Fremmer samarbejdet mellem bier og planter", "B: Minimerer væksten af ukrudt", "C: Opretholder den optimale jordfugtighed"}, "C");
@@ -50,6 +56,7 @@ public class Quiz {
         this.addQuestion(q5);
     }
 
+    // Check answer by the index of the question and the player's answer
     public boolean checkAnswer(int index, String answer) {
         return this.questions.get(index).getCorrectAnswer().equals(answer);
     }

@@ -28,7 +28,7 @@ public class Registry {
         String command = elements[0].toLowerCase(); // Get command from string-array
         String[] parameters = getParameters(elements); // Get parameters
         Command handler = getCommand(command); // Retrieves command. If not a recognized command, it returns null
-        return (handler==null ? fallback : handler).execute(context, command, parameters); // Runs command if there is no error
+        return (handler==null ? fallback : handler).execute(context, command, parameters); // Runs command if there is no error and returns message
     }
 
     // Get command
@@ -41,8 +41,7 @@ public class Registry {
         return commands.keySet().toArray(new String[0]);
     }
 
-    // helpers
-
+    // Helpers
     private String[] getParameters (String[] input) {
         String[] output = new String[input.length-1];
         for (int i=0 ; i<output.length ; i++) {

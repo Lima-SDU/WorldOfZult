@@ -9,6 +9,7 @@ public class CommandTalk extends BaseCommand implements Command {
     public CommandTalk() {
         description = "Brug til at tale med de forskellige grupper i verden. Udføres ved at skrive “tal” i et rum der indeholder en gruppe\n";
     }
+
     @Override
     public String execute (Context context, String command, String parameters[]) {
         StringBuilder message = new StringBuilder();

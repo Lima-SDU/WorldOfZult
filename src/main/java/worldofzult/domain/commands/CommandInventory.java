@@ -15,6 +15,7 @@ public class CommandInventory extends BaseCommand implements Command {
     public String execute (Context context, String command, String parameters[]) {
         StringBuilder message = new StringBuilder();
 
+        // Get current room
         Space space = context.getCurrent();
 
         //Get the spaces inventory

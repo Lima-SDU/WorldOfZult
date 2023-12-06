@@ -33,12 +33,15 @@ public class CommandGiveItem extends BaseCommand implements Command {
         //Check if space has a group
         if (group != null) {
             //Try to give specified item to group
-            if (group.checkItem(parameters[0])) {
-                playerInventory.removeItem(playerInventory.getItem(parameters[0]));
-                group.setHunger(false);
+            if (group.checkItem(parameters[0])) { // Check if the item is correct
+                playerInventory.removeItem(playerInventory.getItem(parameters[0])); // Remove from player's inventory
+                group.setHunger(false); // Update group status
+
+                // Build string message
                 message.append(parameters[0] + " blev givet til gruppen.\n");
                 message.append(group.getSpeech2());
 
+                // Set isDone to true and if there is a hungry group, set isDone to false as the game is not finished.
                 boolean isDone = true;
 
                 for (Group g : context.getGroups()) {
@@ -48,6 +51,7 @@ public class CommandGiveItem extends BaseCommand implements Command {
                     }
                 }
 
+                // If there are no hungry groups, finish game
                 if (isDone) {
                     context.makeDone();
                 }

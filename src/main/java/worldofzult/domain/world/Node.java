@@ -30,6 +30,7 @@ public class Node {
         return edges.get(direction);
     }
 
+    // Get edges
     public Map<String, Node> getEdges() {
         return edges;
     }

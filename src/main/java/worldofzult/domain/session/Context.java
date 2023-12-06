@@ -72,14 +72,17 @@ public class Context {
         return done;
     }
 
+    // Sets the difficulty of the game, which changes the capacity of the inventory
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
 
+    // Get capacity
     public int getCapacity() {
         return this.capacity;
     }
 
+    // Get count of moves
     public int getCount() {
         return counter.getCount();
     }

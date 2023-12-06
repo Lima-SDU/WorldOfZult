@@ -6,8 +6,7 @@ import worldofzult.domain.commands.Registry;
 public class Startscreen {
     private String name; // Name of the player
 
-    private int difficulty; // Difficulty. 1 - 3, maybe?
-
+    // Displays startscreen. Also asks for the name of players
     public String displayStartscreen (Scanner scanner) {
         // Display Startscreen and get user-input on their name and difficulty
         System.out.println("\n" +
@@ -26,6 +25,7 @@ public class Startscreen {
         return this.name;
     }
 
+    // Prints welcome message
     public void printWelcomeMessage() {
         String message = "\nHej " + name + "! Velkommen til World of Zult!\n" +
                 "Dette spil handler om at stoppe sult ved at udforske denne fiktive verden, " +
