@@ -40,9 +40,9 @@ public class CommandPutDownItem extends BaseCommand implements Command {
                     return message.toString();
                 }
             }
-            return message.append("Fejl: Redskab ikke fundet\n").toString();
+            return message.append("Redskab ikke fundet\n").toString();
         } else {
-            return message.append("Fejl: Der er ikke plads til flere items i rummet.\n").toString();
+            return message.append("Der er ikke plads til flere items i rummet.\n").toString();
         }
     }
 }
