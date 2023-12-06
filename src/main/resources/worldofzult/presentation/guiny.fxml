@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="800.0" maxWidth="1200" minHeight="800" minWidth="1200" prefHeight="800.0" prefWidth="1200.0" style="resize: none;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="worldofzult.presentation.WorldOfZultController">
+<GridPane maxHeight="800.0" maxWidth="1200" minHeight="800" minWidth="1200" prefHeight="800.0" prefWidth="1200.0" style="resize: none;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="worldofzult.presentation.WorldOfZultController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="990.0" minWidth="10.0" prefWidth="754.8316040039062" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="496.0343017578125" minWidth="0.0" prefWidth="235.16839599609375" />
@@ -62,7 +72,7 @@
                   <ImageView fx:id="itemPlace1" fitHeight="100.0" fitWidth="100.0" layoutX="170.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="401.0" />
                   <ImageView fx:id="itemPlace2" fitHeight="100.0" fitWidth="100.0" layoutX="277.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="itemPlace3" fitHeight="100.0" fitWidth="100.0" layoutX="440.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button fx:id="goToQuizButton" layoutX="288.0" layoutY="246.0" mnemonicParsing="false" onMouseClicked="#talkButton" prefHeight="70.0" prefWidth="281.0" text="Fortsæt til quiz" visible="false">
+                  <Button fx:id="goToQuizButton" layoutX="288.0" layoutY="246.0" mnemonicParsing="false" onMouseClicked="#talkButton" prefHeight="70.0" prefWidth="281.0" style="-fx-font-family: Arial; -fx-font-size: 30px; -fx-background-color: #68bf69;" text="Fortsæt til quiz" textFill="WHITE" visible="false">
                      <font>
                         <Font size="37.0" />
                      </font>
