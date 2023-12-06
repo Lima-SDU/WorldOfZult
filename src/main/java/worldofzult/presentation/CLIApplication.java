@@ -53,7 +53,7 @@ public class CLIApplication {
 
             domain.runQuizCLI();
 
-            System.out.println("Tak for at spille! Du er nu helt færdig og klarede det på " + domain.getCount() + " træk. Sult er et stort problem i nogle dele af verden, så vi håber, at du lærte noget nyt og selvfølgelig at spillet var spændende \\^o^/\n\n");
+            System.out.println("Tak for at spille! Du er nu helt færdig og klarede det på " + domain.getCount() + " træk. Sult er et stort problem i nogle dele af verden, så vi håber, at du lærte noget nyt og selvfølgelig at spillet var spændende. \\^o^/\n\n");
 
             System.out.print("Ønsker du at genstarte spillet? (Ja/Nej): ");
             String doneText = scanner.nextLine();
