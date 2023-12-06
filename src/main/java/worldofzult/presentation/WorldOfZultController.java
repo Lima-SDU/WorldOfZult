@@ -107,7 +107,7 @@ public class WorldOfZultController {
         // SETUP INITIAL ROOM-VIEW
         // Set initial image for the room and minimap
         imgGame.setImage(new Image("file:src/main/resources/worldofzult/presentation/images/before/Indgang.png"));
-        miniMap.setImage(new Image("file:src/main/resources/worldofzult/presentation/images/minimap/indgang.jpg"));
+        miniMap.setImage(new Image("file:src/main/resources/worldofzult/presentation/images/minimap/indgang.png"));
         updateStatusBar();
 
         // Set initial visible arrows
@@ -369,7 +369,7 @@ public class WorldOfZultController {
     public void updateRoomImage() {
         // FIND ROOM-IMAGE AND SHOW IT
         imgGame.setImage(new Image(findGameImage(domain.getCurrent())));
-        miniMap.setImage(new Image("file:src/main/resources/worldofzult/presentation/images/minimap/" + domain.getCurrent() + ".jpg"));
+        miniMap.setImage(new Image("file:src/main/resources/worldofzult/presentation/images/minimap/" + domain.getCurrent() + ".png"));
 
         // CHANGE VISIBILITY OF ARROWS TO MATCH ROOM
         boolean[] edges = domain.getCurrentExits();
