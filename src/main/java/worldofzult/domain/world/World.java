@@ -14,39 +14,39 @@ public class World {
     // Constructor
     public World () {
         // Adds items
-        Item lys = new Item("Lyspære", "\n Denne pære udsender specifikke bølgelængder af lys, " +
+        Item lys = new Item("Lyspære", "\nDenne pære udsender specifikke bølgelængder af lys, " +
                 "ofte blåt og rødt, som er afgørende for fotosyntese og plantevækst." +
                 " Dette er også kaldet et vækstlys.\n");
-        Item  vandingssystem = new Item("Vandingssystem","\n Vandingssystemet opsættes på en farm," +
+        Item  vandingssystem = new Item("Vandingssystem","\nVandingssystemet opsættes på en farm," +
                 " hvor afgrøderne ikke får nok vand fra naturen til at kunne gro." +
                 " Dette gør ellers golde områder til frugtbar jord.\n");
-        Item biokul = new Item("Biokul","\n Biokul modvirker dårlig jordkvalitet," +
+        Item biokul = new Item("Biokul","\nBiokul modvirker dårlig jordkvalitet," +
                 " som er et problem i nogle lande. Bedre jordkvalitet gør, at man kan dyrke flere varianter" +
                 " af afgrøder.\n");
-        Item maskine = new Item("Såmaskine", "\n Anvendes til såning af korn eller frø.\n");
-        Item opbevaringskasse = new Item("Opbevaringskasse", "\n Denne boks skærmer for vind og vejr," +
+        Item maskine = new Item("Såmaskine", "\nAnvendes til såning af korn eller frø.\n");
+        Item opbevaringskasse = new Item("Opbevaringskasse", "\nDenne boks skærmer for vind og vejr," +
                 " hvilket forlænger holdbarheden af maden." + "På verdensplan går 33% af høsten til spilde\n");
 
 
         // Adds groups
 
         // Adds groups
-        Group groupDrivhus = new Group(lys, "\n Hej %s, her dyrker vi grøntsager," +
+        Group groupDrivhus = new Group(lys, "\nHej %s, her dyrker vi grøntsager," +
                 " som f.eks. tomater, agurker og peberfrugter. Vores grøntsager vokser bedst, " +
                 "når der er meget dagslys, da lys er nødvendigt for fotosyntesen. Desværre kan vi ikke styre vejret eller hvornår solen går" +
-                " ned, derfor er vi meget afhængige af sæsonerne.\n \n", "\n Lyspærer? Genialt! Det kan vi sætte op i drivhusene, så der også kan være lys når solen ikke skinner.\n \n");
-        Group groupVand = new Group(vandingssystem, "\n Hey %s! Her på vores gård bliver der dyrket en del frugt ," +
+                " ned, derfor er vi meget afhængige af sæsonerne.\n \n", "\nLyspærer? Genialt! Det kan vi sætte op i drivhusene, så der også kan være lys når solen ikke skinner.\n \n");
+        Group groupVand = new Group(vandingssystem, "\nHey %s! Her på vores gård bliver der dyrket en del frugt ," +
                 " Især bananer. Problemet er at mange af dem ender som uspiselige," +
                 " da de ender som små tøre gnallinger. Dette skyldes at jorden er alt for tør  " +
-                "Vi laver endda en regndans hver morgen, men det ser desværre ikke ud til at virke.\n \n", "\n Wow! Et helt vandingssystem, Det vil vi gøre godt brug af. Nu behøver vi ikke lave flere regndanse. Mange tak!\n \n");
-        Group groupKul = new Group(biokul, "\n Hej %s, vi har rigtigt meget landbrugsjord, " +
+                "Vi laver endda en regndans hver morgen, men det ser desværre ikke ud til at virke.\n \n", "\nWow! Et helt vandingssystem, Det vil vi gøre godt brug af. Nu behøver vi ikke lave flere regndanse. Mange tak!\n \n");
+        Group groupKul = new Group(biokul, "\nHej %s, vi har rigtigt meget landbrugsjord, " +
                 "som vi rigtigt gerne vil dyrke vores afgrøder på. Vi har dog et stort problem, som forhindrer os i at dyrke noget på det. " +
-                "Jordkvaliteten er for dårlig til at vores planter kan gro i det. Vil du hjælpe os?\n \n", "\n Juhuu, biokul!!! Det vil forbedre vores jordkvalitet en hel del, det er perfekt for vores afgrøder." +
+                "Jordkvaliteten er for dårlig til at vores planter kan gro i det. Vil du hjælpe os?\n \n", "\nJuhuu, biokul!!! Det vil forbedre vores jordkvalitet en hel del, det er perfekt for vores afgrøder." +
                 "Mange tak!\n \n");
-        Group groupMaskine = new Group(maskine, "\n Hej %s! Vi er landmænd, og gror korn." +
+        Group groupMaskine = new Group(maskine, "\nHej %s! Vi er landmænd, og gror korn." +
                 "Vi har længe selv stået for at så vores korn, men det tager lang tid og processen er hård." +
-                " Kan du komme i tanke om en maskine som ville kunne hjælpe med at så korn mere effektivt?\n \n", "\n Jubii! Tusind tak for såmaskinen, nu kan vi så vores korn på en meget mere effektiv måde!\n \n");
-        Group groupOpbevaringskasse = new Group(opbevaringskasse, "\n Hej %s! Vi har nogle afgrøder" +
+                " Kan du komme i tanke om en maskine som ville kunne hjælpe med at så korn mere effektivt?\n \n", "\nJubii! Tusind tak for såmaskinen, nu kan vi så vores korn på en meget mere effektiv måde!\n \n");
+        Group groupOpbevaringskasse = new Group(opbevaringskasse, "\nHej %s! Vi har nogle afgrøder" +
                 " som producerer en masse mad. Vi prøver at udnytte så meget af det som vi kan nå, men maden fordærver desværre for hurtigt og en del ender med at gå til spilde" +
                 ". Vi ville ønske at maden kunne holde længere.\n \n", "\nTusind tak for opbevaringskassen, nu kan vi opbevare vores mad i meget længere tid, inden det fordærver. Nu vil vores mad ikke længere gå til spilde.\n \n");
 
