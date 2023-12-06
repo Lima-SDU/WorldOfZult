@@ -22,9 +22,9 @@ public class CommandInventory extends BaseCommand implements Command {
 
         //Print items in space
         if (!spaceInventory.getItems().isEmpty()) {
-            message.append("Følgende redskaber ligger i rummet");
+            message.append("Følgende redskaber ligger i rummet:\n");
             for (Item item : spaceInventory.getItems()) {
-                message.append(item.getName());
+                message.append("- " + item.getName() + "\n");
             }
         } else {
             message.append("Der er ingen redskaber i rummet\n");
@@ -35,12 +35,12 @@ public class CommandInventory extends BaseCommand implements Command {
 
         //Print items in player
         if (!playerInventory.getItems().isEmpty()) {
-            message.append("Følgende redskaber ligger i inventaret");
+            message.append("\nFølgende redskaber ligger i inventaret: \n");
             for (Item item : playerInventory.getItems()) {
-                message.append(item.getName());
+                message.append("- " + item.getName() + "\n");
             }
         } else {
-            message.append("Der er ingen redskaber i inventaret\n");
+            message.append("\nDer er ingen redskaber i inventaret\n");
         }
 
         return message.toString();

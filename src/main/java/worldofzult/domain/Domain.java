@@ -115,4 +115,8 @@ public class Domain {
     public boolean checkQuizAnswer(int index, String answer) {
         return quiz.checkAnswer(index, answer);
     }
+
+    public void runQuizCLI() {
+        quiz.run();
+    }
 }

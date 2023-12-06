@@ -22,7 +22,23 @@ public class CLIApplication {
         startscreen.printWelcomeMessage();
         domain.runCommand("hjælp");
 
-        domain.setCapacity(5);
+        System.out.println("Du kan vælge mellem 3 sværhedsgrader:\n" +
+                "'1' (Let)    : 5 pladser i inventory\n" +
+                "'2' (Medium) : 3 pladser i inventory\n" +
+                "'3' (Svær)   : 1 plads i inventory\n");
+        System.out.print("Indtast ønsket sværhedsgrad (1/2/3): ");
+        String capacity = scanner.nextLine();
+
+        while ((!capacity.equals("1") && !capacity.equals("2") && !capacity.equals("3"))) {
+             System.out.print("Indtast ønsket sværhedsgrad (1/2/3): ");
+             capacity = scanner.nextLine();
+        }
+
+        switch (capacity) {
+            case "1" -> domain.setCapacity(5);
+            case "2" -> domain.setCapacity(3);
+            case "3" -> domain.setCapacity(1);
+        }
 
         while (domain.checkIsDone()==false) { // Runs game if not done
             System.out.print("> ");
@@ -31,13 +47,10 @@ public class CLIApplication {
             System.out.println(message);
         }
 
-        System.out.println("Godt gået " + name + "! Du har klaret spillet, men der er en quiz inden spillet er helt slut. Den skal teste, hvor opmærksom du har været undervejs i spillet. Der kommer en række spørgsmål og de har hver tre valgmuligheder, hvor én af dem er korrekt. Du skal vælge det rigtige svar.");
+        System.out.println("Godt gået " + name + "! Du har klaret spillet, men der er en quiz inden spillet er helt slut. Den skal teste, hvor opmærksom du har været undervejs i spillet. Der kommer en række spørgsmål og de har hver tre valgmuligheder, hvor én af dem er korrekt. Du skal vælge det rigtige svar.\n");
 
-        //Quiz quiz = new Quiz();
-        //quiz.initQuiz();
-        //quiz.run();
+        domain.runQuizCLI();
 
         System.out.println("Tak for at spille! Du er nu helt færdig og klarede det på " + domain.getCount() + " træk. Sult er et stort problem i nogle dele af verden, så vi håber, at du lærte noget nyt og selvfølgelig at spillet var spændende \\^o^/");
-
     }
 }
