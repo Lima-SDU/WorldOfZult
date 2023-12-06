@@ -50,21 +50,6 @@
             <ImageView fx:id="imgGame" fitHeight="553.0" fitWidth="856.0" pickOnBounds="true" />
             <AnchorPane prefHeight="549.0" prefWidth="867.0">
                <children>
-                  <Polygon fx:id="arrowDown" fill="#c9c5c591" layoutX="413.0" layoutY="497.0" points="-9.75311279296875, 3.507843017578125, 14.74688720703125, 48.507843017578125, 39.0902099609375, 3.666656494140625" stroke="WHITE" strokeType="INSIDE">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Polygon>
-                  <Polygon fx:id="arrowRight" fill="#c9c5c591" layoutX="758.0" layoutY="310.0" points="33.57696533203125, -4.6556396484375, 76.0003662109375, -31.5, 33.57501220703125, -51.84759521484375" stroke="WHITE" strokeType="INSIDE">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Polygon>
-                  <Polygon fx:id="arrowLeft" fill="#c9c5c591" layoutX="82.0" layoutY="200.0" points="-59.01826477050781, 78.8497314453125, -24.64719581604004, 104.85360717773438, -24.64716911315918, 57.8497314453125" stroke="WHITE" strokeType="INSIDE">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Polygon>
                   <Polygon fx:id="arrowUp" fill="#c9c5c591" layoutX="430.0" layoutY="138.0" points="-27.671966552734375, -82.0419921875, 22.897491455078125, -82.0419921875, -2.171966552734375, -131.55203247070312" stroke="WHITE" strokeType="INSIDE" style="fx-cursor: hand;">
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -87,6 +72,21 @@
                         <InnerShadow />
                      </effect>
                   </Button>
+                  <Polygon fx:id="arrowRight" fill="#c9c5c591" layoutX="826.0" layoutY="381.0" points="-27.671966552734375, -82.0419921875, 22.897491455078125, -82.0419921875, -2.171966552734375, -131.55203247070312" rotate="90.0" stroke="WHITE" strokeType="INSIDE" style="fx-cursor: hand;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Polygon>
+                  <Polygon fx:id="arrowLeft" fill="#c9c5c591" layoutX="35.0" layoutY="381.0" points="-27.671966552734375, -82.0419921875, 22.897491455078125, -82.0419921875, -2.171966552734375, -131.55203247070312" rotate="-90.0" stroke="WHITE" strokeType="INSIDE" style="fx-cursor: hand;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Polygon>
+                  <Polygon fx:id="arrowDown" fill="#c9c5c591" layoutX="430.0" layoutY="624.0" points="-27.671966552734375, -82.0419921875, 22.897491455078125, -82.0419921875, -2.171966552734375, -131.55203247070312" rotate="180.0" stroke="WHITE" strokeType="INSIDE" style="fx-cursor: hand;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Polygon>
                </children>
             </AnchorPane>
          </children>
