@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class WorldOfZultController {
     // DIFFICULTY
-    public int capacity;
+    private int capacity;
 
     // MISCELLANEOUS OBJECTS
     @FXML
@@ -91,18 +91,18 @@ public class WorldOfZultController {
 
     // Button for transitioning to the quiz
     @FXML
-    public Button goToQuizButton;
+    private Button goToQuizButton;
 
     // NON-FXML OBJECTS
-    public Domain domain;
-    public ArrayList<ImageView> roomImageViews;
-    public ArrayList<ImageView> inventoryImageViews;
-    public ArrayList<MenuItem> giveButtons;
-    public ArrayList<MenuItem> putDownButtons;
+    private Domain domain;
+    private ArrayList<ImageView> roomImageViews;
+    private ArrayList<ImageView> inventoryImageViews;
+    private ArrayList<MenuItem> giveButtons;
+    private ArrayList<MenuItem> putDownButtons;
     private ArrayList<MenuButton> itemMenuButtons;
 
     @FXML
-    public void initialize() {
+    private void initialize() {
         // Create interface with domain-layer
         domain = new Domain();
 
@@ -232,21 +232,21 @@ public class WorldOfZultController {
 
     // Runs the talk command and prints the result to the terminal
     @FXML
-    public void talkButton() {
+    private void talkButton() {
         String speech = domain.runCommand("tal");
         terminal.appendText(speech);
     }
 
     // Runs the helpGUI command and prints the result to the terminal
     @FXML
-    public void helpButton() {
+    private void helpButton() {
         String speech = domain.runCommand("hjælpgui");
         terminal.appendText(speech);
     }
 
     // Runs the go command and updates the GUI
     @FXML
-    EventHandler<MouseEvent> navigationButton = new EventHandler<MouseEvent>() {
+    private EventHandler<MouseEvent> navigationButton = new EventHandler<MouseEvent>() {
         @Override
         public void handle(MouseEvent mouseEvent) {
             // Get source of event and retrieve UserData from it to run command. Then update Game
@@ -260,7 +260,7 @@ public class WorldOfZultController {
 
     // Loads the Quiz scene and its controller and sends the status to the quiz controller
     @FXML
-    EventHandler<ActionEvent> goToQuiz = new EventHandler<ActionEvent>() {
+    private EventHandler<ActionEvent> goToQuiz = new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent actionEvent) {
             try {
@@ -278,7 +278,7 @@ public class WorldOfZultController {
 
     // Runs the give command with the item, updates the GUI and if the game is done -> display the goToQuizButton
     @FXML
-    EventHandler<ActionEvent> giveButton = new EventHandler<ActionEvent>() {
+    private EventHandler<ActionEvent> giveButton = new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent actionEvent) {
             // Get source of event and retrieve UserData from it to run command. Then update Game
@@ -295,7 +295,7 @@ public class WorldOfZultController {
 
     // Runs the putdown command with the item name, prints the action to the terminal and update the GUI
     @FXML
-    EventHandler<ActionEvent> putDownButton = new EventHandler<ActionEvent>() {
+    private EventHandler<ActionEvent> putDownButton = new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent actionEvent) {
             // Get source of event and retrieve UserData from it to run command. Then update Game
@@ -308,7 +308,7 @@ public class WorldOfZultController {
 
     // Runs the pickup command with the item name, prints the action to the terminal and updates the GUI
     @FXML
-    EventHandler<MouseEvent> pickUpButton = new EventHandler<MouseEvent>() {
+    private EventHandler<MouseEvent> pickUpButton = new EventHandler<MouseEvent>() {
         @Override
         public void handle(MouseEvent mouseEvent) {
             // Get source of event and retrieve UserData from it to run command. Then update Game
@@ -321,7 +321,7 @@ public class WorldOfZultController {
 
     // Gets info about the item, and displays it in terminal
     @FXML
-    EventHandler<ActionEvent> infoButton = new EventHandler<ActionEvent>() {
+    private EventHandler<ActionEvent> infoButton = new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent actionEvent) {
             // Get source of event and retrieve UserData from it to run command
@@ -331,7 +331,7 @@ public class WorldOfZultController {
         }
     };
 
-    public String findGameImage(String name) {
+    private String findGameImage(String name) {
         // Check status for showing before- or after-images of the room and then return filepath
         // Images for corridors without a group are placed in the after-folder
         if (domain.checkGroupStatus()) {
@@ -341,12 +341,12 @@ public class WorldOfZultController {
         }
     }
 
-    public String findItemImage(String name) {
+    private String findItemImage(String name) {
         // Return  filepath of the given item
          return "file:src/main/resources/worldofzult/presentation/images/items/" + name + ".png";
     }
 
-    public void updateItemsInInventory() {
+    private void updateItemsInInventory() {
         // RESET PLAYER-INVENTORY
         for (ImageView imageView : inventoryImageViews) {
             imageView.setImage(null);
@@ -372,7 +372,7 @@ public class WorldOfZultController {
         }
     }
 
-    public void updateItemsInRoom() {
+    private void updateItemsInRoom() {
         // RESET ROOM-INVENTORY
         for (ImageView imageView : roomImageViews) {
             imageView.setVisible(false);
@@ -390,7 +390,7 @@ public class WorldOfZultController {
         }
     }
 
-    public void updateRoomImage() {
+    private void updateRoomImage() {
         // FIND ROOM-IMAGE AND SHOW IT
         imgGame.setImage(new Image(findGameImage(domain.getCurrent())));
         miniMap.setImage(new Image("file:src/main/resources/worldofzult/presentation/images/minimap/" + domain.getCurrent() + ".png"));
@@ -403,7 +403,7 @@ public class WorldOfZultController {
         arrowLeft.setVisible(edges[3]);
     }
 
-    public void updateGame() {
+    private void updateGame() {
         // UPDATES THE WHOLE GAME
         updateRoomImage();
         updateItemsInRoom();
@@ -411,7 +411,7 @@ public class WorldOfZultController {
     }
 
     // Clears the terminal and prints the count and status
-    public void updateStatusBar() {
+    private void updateStatusBar() {
         terminal.clear();
         int count = domain.getCount();
         int notHungryGroups = domain.getNonHungryGroupCount();

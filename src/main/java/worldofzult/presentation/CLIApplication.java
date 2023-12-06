@@ -13,17 +13,22 @@ public class CLIApplication {
     public static void main (String args[]) {
         boolean isDone = false;
 
+        // Game loop for making the game replayable
         while (!isDone) {
+            // Instantiate scanner and domain -> game
             scanner = new Scanner(System.in);
             Domain domain = new Domain();
 
+            // Prints welcome message and asks for playerName
             Startscreen startscreen = new Startscreen();
             String name = startscreen.displayStartscreen(scanner);
-
             domain.setPlayerName(name);
+
+            // Prints instructions to the player
             startscreen.printWelcomeMessage();
             domain.runCommand("hjælp");
 
+            // Choosing the difficulty of the game
             System.out.println("Du kan vælge mellem 3 sværhedsgrader:\n" +
                     "'1' (Let)    : 5 pladser i inventory\n" +
                     "'2' (Medium) : 3 pladser i inventory\n" +
@@ -49,12 +54,14 @@ public class CLIApplication {
                 System.out.println(message);
             }
 
+            // Prints well done message
             System.out.println("Godt gået " + name + "! Du har klaret spillet, men der er en quiz inden spillet er helt slut. Den skal teste, hvor opmærksom du har været undervejs i spillet. Der kommer en række spørgsmål og de har hver tre valgmuligheder, hvor én af dem er korrekt. Du skal vælge det rigtige svar.\n");
 
             domain.runQuizCLI();
 
             System.out.println("Tak for at spille! Du er nu helt færdig og klarede det på " + domain.getCount() + " træk. Sult er et stort problem i nogle dele af verden, så vi håber, at du lærte noget nyt og selvfølgelig at spillet var spændende. \\^o^/\n\n");
 
+            // Asking the player if they want to replay
             System.out.print("Ønsker du at genstarte spillet? (Ja/Nej): ");
             String doneText = scanner.nextLine();
 
@@ -63,6 +70,7 @@ public class CLIApplication {
                 doneText = scanner.nextLine();
             }
 
+            // If the player chooses 'no' -> else replay the game
             if (doneText.equalsIgnoreCase("nej")) {
                 isDone = true;
             }
