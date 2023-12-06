@@ -26,14 +26,14 @@
       </AnchorPane>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0">
          <top>
-            <Label prefHeight="105.0" prefWidth="468.0" text="Du klarede spillet og løste udfordringerne!    Se hvor godt du klarede dig:" wrapText="true" BorderPane.alignment="CENTER">
+            <Label prefHeight="105.0" prefWidth="468.0" style="-fx-font-family: Arial; -fx-font-size: 24px;" text="Du klarede spillet og løste udfordringerne!    Se hvor godt du klarede dig:" wrapText="true" BorderPane.alignment="CENTER">
                <font>
                   <Font size="26.0" />
                </font>
             </Label>
          </top>
          <bottom>
-            <Label prefHeight="111.0" prefWidth="500.0" text="Sult er et stort problem i nogle dele af verden, så vi håber, at du lærte noget nyt og selvfølgelig, at spillet var spændende" wrapText="true" BorderPane.alignment="CENTER">
+            <Label prefHeight="111.0" prefWidth="500.0" style="-fx-font-family: Arial; -fx-font-size: 24px;" text="Sult er et stort problem i flere dele af verden, så vi håber, at du lærte noget nyt og selvfølgelig, at spillet var spændende" wrapText="true" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets bottom="50.0" />
                </BorderPane.margin>
