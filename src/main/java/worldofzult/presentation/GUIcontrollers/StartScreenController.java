@@ -12,7 +12,6 @@ import worldofzult.presentation.WOZApplication;
 import java.io.IOException;
 
 public class StartScreenController {
-
     // FXML Elements
     @FXML
     public Button difficulty1;
@@ -21,7 +20,7 @@ public class StartScreenController {
     public TextField inputName;
 
     @FXML
-    public void initialize() {
+    private void initialize() {
        // Adds userdata representing the capacity of playerInventory
        difficulty1.setUserData(5);
        difficulty2.setUserData(3);
@@ -32,7 +31,7 @@ public class StartScreenController {
     }
 
     // Loads the game scene. Sends the users name and the chosen difficulty
-    public void startGame(Stage stage, int capacity, String playerName) throws IOException {
+    private void startGame(Stage stage, int capacity, String playerName) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(WOZApplication.class.getResource("game.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);

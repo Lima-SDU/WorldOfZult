@@ -42,17 +42,17 @@ public class QuizController {
     public Button submitButton;
 
     // ToggleGroups for RadioButtons
-    public ToggleGroup tGroup1;
-    public ToggleGroup tGroup2;
-    public ToggleGroup tGroup3;
-    public ToggleGroup tGroup4;
-    public ToggleGroup tGroup5;
+    private ToggleGroup tGroup1;
+    private ToggleGroup tGroup2;
+    private ToggleGroup tGroup3;
+    private ToggleGroup tGroup4;
+    private ToggleGroup tGroup5;
 
     // List of ToggleGroups
-    public ArrayList<ToggleGroup> groups;
+    private ArrayList<ToggleGroup> groups;
 
     @FXML
-    public void initialize() {
+    private void initialize() {
         // Instantiating domain for the quiz
         domain = new Domain();
 
@@ -134,7 +134,7 @@ public class QuizController {
     }
 
     // Sets the scene to the EndScreen
-    public void goToEndScreen(Stage stage) throws IOException {
+    private void goToEndScreen(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(WOZApplication.class.getResource("spilslut.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);

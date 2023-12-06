@@ -22,7 +22,7 @@ public class EndScreenController {
 
     // Adding eventhandler to the buttons
     @FXML
-    public void initialize() {
+    private void initialize() {
         replayButton.setOnAction(replayGame);
         endGameButton.setOnAction(endGame);
     }
