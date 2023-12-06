@@ -27,7 +27,7 @@
                <VBox.margin>
                   <Insets bottom="5.0" left="17.0" />
                </VBox.margin></ImageView>
-            <TextArea fx:id="terminal" editable="false" prefHeight="352.0" prefWidth="341.0" style="-fx-opacity: 1;" wrapText="true">
+            <TextArea fx:id="terminal" editable="false" focusTraversable="false" prefHeight="352.0" prefWidth="341.0" style="-fx-opacity: 1;" wrapText="true">
              <font>
                  <Font size="18.0" />
              </font>
