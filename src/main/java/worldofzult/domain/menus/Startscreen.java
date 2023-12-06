@@ -26,7 +26,7 @@ public class Startscreen {
         return this.name;
     }
 
-    public void printWelcomeMessage(Registry registry) {
+    public void printWelcomeMessage() {
         String message = "\nHej " + name + "! Velkommen til World of Zult!\n" +
                 "Dette spil handler om at stoppe sult ved at udforske denne fiktive verden, " +
                 "som er fyldt med grupper af mennesker, der alle sulter af forskellige årsager." +
@@ -35,7 +35,6 @@ public class Startscreen {
                 "grupper for at høre hvad de har brug for.\nLyt godt med, for der kommer en " +
                 "quiz til sidst. Her er en liste med forskellige commands:\n";
         System.out.println(message);
-        registry.dispatch("hjælp");
         System.out.println();
     }
 }
