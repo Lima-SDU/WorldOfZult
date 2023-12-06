@@ -1,17 +1,17 @@
 package worldofzult.domain.session;
 
 public class Counter {
-    private static int count = 0;
+    private int count = 0;
 
-    public static void incrCount(){
+    public void incrCount(){
         count++;
     }
 
-    public static void resetCount() {
+    public void resetCount() {
         count = 0;
     }
 
-    public static int getCount() {
+    public int getCount() {
         return count;
     }
 }

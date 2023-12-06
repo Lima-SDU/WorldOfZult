@@ -14,14 +14,16 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class Domain {
+    private Game game;
     private Context context;
     private Registry registry;
     private Quiz quiz;
 
     public Domain() {
-       Game.initRegistry();
-       context = Game.getContext();
-       registry = Game.getRegistry();
+       game = new Game();
+       game.initRegistry();
+       context = game.getContext();
+       registry = game.getRegistry();
        Player player = new Player("");
        context.setPlayer(player);
        this.quiz = new Quiz();
@@ -91,7 +93,7 @@ public class Domain {
     }
 
     public int getCount() {
-        return Counter.getCount();
+        return context.getCount();
     }
 
     public int getNonHungryGroupCount() {

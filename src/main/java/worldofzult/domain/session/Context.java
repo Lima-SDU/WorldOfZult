@@ -21,10 +21,13 @@ public class Context {
     //Holds boolean for if the game is done
     private boolean done = false;
 
+    private Counter counter;
+
     // Constructor gets given startnode
-    public Context (Space node, ArrayList<Group> groups) {
+    public Context (Space node, ArrayList<Group> groups, Counter counter) {
         current = node;
         this.groups = groups;
+        this.counter = counter;
     }
 
     // Gets the current Space, where the player is
@@ -41,7 +44,7 @@ public class Context {
             current.goodbye(); // Runs goodbye
             current = next; // Changes to the next room / node
             current.welcome(); // Runs the welcome-method
-            Counter.incrCount();
+            counter.incrCount();
         }
     }
 
@@ -75,5 +78,9 @@ public class Context {
 
     public int getCapacity() {
         return this.capacity;
+    }
+
+    public int getCount() {
+        return counter.getCount();
     }
 }
