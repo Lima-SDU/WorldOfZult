@@ -104,7 +104,7 @@ public class QuizController {
         int result = 0;
         for (int i = 0; i < groups.size(); i++) {
             RadioButton button = (RadioButton) groups.get(i).getSelectedToggle();
-            if (domain.checkQuizAnswer(i, button.getUserData().toString())) {
+            if (button != null && domain.checkQuizAnswer(i, button.getUserData().toString())) {
                 result++;
             }
         }

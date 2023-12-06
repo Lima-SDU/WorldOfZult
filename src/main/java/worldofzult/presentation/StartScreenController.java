@@ -33,7 +33,9 @@ public class StartScreenController {
         stage.setScene(scene);
         WorldOfZultController controller = fxmlLoader.getController();
         controller.setCapacity(capacity);
-        controller.setPlayerName(playerName);
+        if (!playerName.equals("")) {
+            controller.setPlayerName(playerName);
+        }
     }
 
     public void startGameButton(MouseEvent mouseEvent) {
