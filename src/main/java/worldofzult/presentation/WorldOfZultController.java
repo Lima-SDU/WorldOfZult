@@ -295,6 +295,7 @@ public class WorldOfZultController {
             String text = domain.runCommand("opsaml " + imageView.getUserData());
             updateGame();
             terminal.appendText(text);
+
         }
     };
 
