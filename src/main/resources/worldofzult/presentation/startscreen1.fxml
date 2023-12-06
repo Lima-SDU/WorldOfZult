@@ -12,9 +12,9 @@
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #FFEBCD;">
          <children>
-            <Button fx:id="startButton" layoutX="369.0" layoutY="499.0" mnemonicParsing="false" onMouseClicked="#goToStartScreen" prefHeight="187.0" prefWidth="460.0" style="-fx-background-color: #008000; -fx-text-fill: FFFFFF; -fx-font-family: Arial;" text="Start spil">
+            <Button fx:id="startButton" layoutX="369.0" layoutY="499.0" mnemonicParsing="false" onMouseClicked="#goToStartScreen" prefHeight="187.0" prefWidth="460.0" style="-fx-background-color: #008000; -fx-text-fill: FFFFFF; -fx-font-family: Arial; -fx-font-size: 85px;" text="Start spil">
                <font>
-                  <Font name="System Bold" size="75.0" />
+                  <Font name="System Bold" size="87.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
