@@ -33,14 +33,14 @@ public class World {
                 " som f.eks. tomater, agurker og peberfrugter. Vores grøntsager vokser bedst, " +
                 "når der er meget dagslys, da lys er nødvendigt for fotosyntesen. Desværre kan vi ikke styre vejret eller hvornår solen går" +
                 " ned, derfor er vi meget afhængige af sæsonerne.\n \n", "\nLyspærer? Genialt! Det kan vi sætte op i drivhusene, så der også kan være lys når solen ikke skinner.\n \n");
-        Group groupVand = new Group(vandingssystem, "\nHey %s! Her på vores gård bliver der dyrket en del frugt ," +
-                " Især bananer. Problemet er at mange af dem ender som uspiselige," +
+        Group groupVand = new Group(vandingssystem, "\nHey %s! Her på vores gård bliver der dyrket en del frugt, " +
+                " især bananer. Problemet er at mange af dem ender som uspiselige," +
                 " da de ender som små tøre gnallinger. Dette skyldes at jorden er alt for tør. " +
-                "Vi laver endda en regndans hver morgen, men det ser desværre ikke ud til at virke.\n \n", "\nWow! Et helt vandingssystem, Det vil vi gøre godt brug af. Nu behøver vi ikke lave flere regndanse. Mange tak!\n \n");
+                "Vi laver endda en regndans hver morgen, men det ser desværre ikke ud til at virke.\n \n", "\nWow! Et helt vandingssystem, det vil vi gøre godt brug af. Nu behøver vi ikke lave flere regndanse. Mange tak!\n \n");
         Group groupKul = new Group(biokul, "\nHej %s, vi har rigtigt meget landbrugsjord, " +
                 "som vi rigtigt gerne vil dyrke vores afgrøder på. Vi har dog et stort problem, som forhindrer os i at dyrke noget på det. " +
                 "Jordkvaliteten er for dårlig til at vores planter kan gro i det. Vil du hjælpe os?\n \n", "\nJuhuu, biokul!!! Det vil forbedre vores jordkvalitet en hel del, det er perfekt for vores afgrøder." +
-                "Mange tak!\n \n");
+                " Mange tak!\n \n");
         Group groupMaskine = new Group(maskine, "\nHej %s! Vi er landmænd, og gror korn. " +
                 "Vi har længe selv stået for at så vores korn, men det tager lang tid og processen er hård." +
                 " Kan du komme i tanke om en maskine som ville kunne hjælpe med at så korn mere effektivt?\n \n", "\nJubii! Tusind tak for såmaskinen, nu kan vi så vores korn på en meget mere effektiv måde!\n \n");
