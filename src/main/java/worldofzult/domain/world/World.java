@@ -43,7 +43,7 @@ public class World {
                 "som vi rigtigt gerne vil dyrke vores afgrøder på. Vi har dog et stort problem, som forhindrer os i at dyrke noget på det. " +
                 "Jordkvaliteten er for dårlig til at vores planter kan gro i det. Vil du hjælpe os?\n \n", "\nJuhuu, biokul!!! Det vil forbedre vores jordkvalitet en hel del, det er perfekt for vores afgrøder." +
                 "Mange tak!\n \n");
-        Group groupMaskine = new Group(maskine, "\nHej %s! Vi er landmænd, og gror korn." +
+        Group groupMaskine = new Group(maskine, "\nHej %s! Vi er landmænd, og gror korn. " +
                 "Vi har længe selv stået for at så vores korn, men det tager lang tid og processen er hård." +
                 " Kan du komme i tanke om en maskine som ville kunne hjælpe med at så korn mere effektivt?\n \n", "\nJubii! Tusind tak for såmaskinen, nu kan vi så vores korn på en meget mere effektiv måde!\n \n");
         Group groupOpbevaringskasse = new Group(opbevaringskasse, "\nHej %s! Vi har nogle afgrøder" +
