@@ -26,7 +26,7 @@ public class EndScreenController {
 
     public void storeResults(int gameResult, int quizResult) {
         moveLabel.setText(moveLabel.getText() + " " + gameResult);
-        quizLabel.setText(quizLabel.getText() + " " + quizResult);
+        quizLabel.setText(quizLabel.getText() + " " + quizResult+"/5");
     }
 
     private EventHandler<ActionEvent> replayGame = new EventHandler<ActionEvent>() {

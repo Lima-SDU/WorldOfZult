@@ -33,7 +33,7 @@
             </Label>
          </top>
          <bottom>
-            <Label prefHeight="111.0" prefWidth="500.0" text="Sult er et stort problem i nogle dele af verden, så vi håber, at du lærte noget nyt og selvfølgelig at spillet var spændende" wrapText="true" BorderPane.alignment="CENTER">
+            <Label prefHeight="111.0" prefWidth="500.0" text="Sult er et stort problem i nogle dele af verden, så vi håber, at du lærte noget nyt og selvfølgelig, at spillet var spændende" wrapText="true" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets bottom="50.0" />
                </BorderPane.margin>
