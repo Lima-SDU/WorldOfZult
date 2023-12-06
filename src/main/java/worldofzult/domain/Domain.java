@@ -112,6 +112,7 @@ public class Domain {
         // Get a list of the items
         ArrayList<Item> items = context.getPlayer().getInventory().getItems();
 
+        // If statemet made obsolote by disabling itemInfo buttons without items
         if (index > items.size() - 1) { // If there is no item in the specified index, return empty string
             return "";
         } else {
