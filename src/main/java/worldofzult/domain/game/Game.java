@@ -27,11 +27,11 @@ public class Game {
 
     // Adds new commands with their name and attached command-instance in the Registry
     public void initRegistry () {
+        // Add initial commands
         Command cmdExit = new CommandExit();
         registry.register("afslut", cmdExit);
         registry.register("gå", new CommandGo());
         registry.register("hjælp", new CommandHelp(registry));
-        registry.register("hjælpgui", new CommandHelpGUI());
 
         //Add our own commands
         registry.register("giv", new CommandGiveItem());
@@ -39,12 +39,15 @@ public class Game {
         registry.register("læg", new CommandPutDownItem());
         registry.register("tal", new CommandTalk());
         registry.register("inventar", new CommandInventory());
+        registry.register("hjælpgui", new CommandHelpGUI());
     }
 
+    // Get context
     public Context getContext() {
         return context;
     }
 
+    // Get registry
     public Registry getRegistry() {
         return registry;
     }

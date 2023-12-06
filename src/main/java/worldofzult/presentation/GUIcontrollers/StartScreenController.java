@@ -30,7 +30,6 @@ public class StartScreenController {
 
     public void startGame(Stage stage, int capacity, String playerName) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(WOZApplication.class.getResource("game.fxml"));
-        //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("guiwoz.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         WorldOfZultController controller = fxmlLoader.getController();

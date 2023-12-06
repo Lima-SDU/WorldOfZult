@@ -24,10 +24,6 @@ public class Space extends Node {
         this.group = group;
     }
 
-    public void printItems (){
-
-    }
-
     // Welcome command, which runs automatically when entering a room
     public void welcome () {
         System.out.println("Du er nu her: "+ this.getName());

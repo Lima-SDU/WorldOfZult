@@ -28,9 +28,6 @@ public class World {
         Item opbevaringskasse = new Item("Opbevaringskasse", "\nDenne boks skærmer for vind og vejr," +
                 " hvilket forlænger holdbarheden af maden." + " På verdensplan går 33% af høsten til spilde.\n");
 
-
-        // Adds groups
-
         // Adds groups
         Group groupDrivhus = new Group(lys, "\nHej %s, her dyrker vi grøntsager," +
                 " som f.eks. tomater, agurker og peberfrugter. Vores grøntsager vokser bedst, " +
@@ -89,8 +86,6 @@ public class World {
         spaces.add(space7);
         spaces.add(space8);
 
-        ArrayList<Space> copy = (ArrayList<Space>) spaces.clone();
-
         // ItemRandomizer - for each item, shuffle the spaces and check if the first space is empty or has the "wrong" group
         // and add the item, else remove the space and shuffle again
         for (Item item : items) {
@@ -104,19 +99,7 @@ public class World {
             }
         }
 
-        /*
-        // Test af randomizer
-        for (Space space : copy) {
-            if (!space.getInventory().getItems().isEmpty()) {
-                System.out.println("Name: " + space.getName() +
-                        "Item: " + space.getInventory().getItems().get(0).getName()
-                );
-            } else {
-                System.out.println("Name: " + space.getName() + " - No item");
-            }
-        }
-        */
-
+        // Adds edges to the rooms / paths between the rooms
         entry.addEdge("syd", space2);
         space2.addEdge("nord", entry);
         space2.addEdge("øst", space3);
@@ -136,6 +119,7 @@ public class World {
         space7.addEdge("syd", space8);
         space8.addEdge("nord", space7);
 
+        // Set entry / spawnpoint for the player
         this.entry = entry;
     }
 
