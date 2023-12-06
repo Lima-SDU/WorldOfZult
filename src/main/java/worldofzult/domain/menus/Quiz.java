@@ -49,4 +49,8 @@ public class Quiz {
         this.addQuestion(q4);
         this.addQuestion(q5);
     }
+
+    public boolean checkAnswer(int index, String answer) {
+        return this.questions.get(index).getCorrectAnswer().equals(answer);
+    }
 }

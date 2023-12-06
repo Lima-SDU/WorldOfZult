@@ -247,11 +247,7 @@ public class WorldOfZultController {
 
             if (domain.checkIsDone()) {
                 try {
-                    Stage stage = (Stage) imgGame.getScene().getWindow();
-                    FXMLLoader fxmlLoader = new FXMLLoader(WOZApplication.class.getResource("quizfinal.fxml"));
-                    Scene scene = new Scene(fxmlLoader.load());
-                    stage.setScene(scene);
-
+                    startQuiz((Stage) imgGame.getScene().getWindow());
                 } catch (IOException e) {
                     System.out.println(e.getMessage());
                 }
@@ -398,5 +394,13 @@ public class WorldOfZultController {
 
     public void setPlayerName(String playerName) {
         domain.setPlayerName(playerName);
+    }
+
+    private void startQuiz(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(WOZApplication.class.getResource("quizfinal.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        QuizController controller = fxmlLoader.getController();
+        controller.storeResult(domain.getCount());
     }
 }

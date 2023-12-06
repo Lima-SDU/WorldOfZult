@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #FFEBCD;" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #FFEBCD;" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="worldofzult.presentation.QuizController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -49,9 +49,9 @@
                         </Label>
                         <Group>
                            <children>
-                              <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="309.0" text="Forhindre skadedyr" />
-                              <RadioButton layoutY="22.5" mnemonicParsing="false" prefHeight="30.0" prefWidth="316.0" text="Fremme fotosyntese og plantevækst" />
-                              <RadioButton layoutY="45.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="303.0" text="Regulere temperatur i drivhuset" />
+                              <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="309.0" text="Forhindre skadedyr" fx:id="button1_1"/>
+                              <RadioButton layoutY="22.5" mnemonicParsing="false" prefHeight="30.0" prefWidth="316.0" text="Fremme fotosyntese og plantevækst" fx:id="button1_2"/>
+                              <RadioButton layoutY="45.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="303.0" text="Regulere temperatur i drivhuset" fx:id="button1_3"/>
                            </children>
                            <VBox.margin>
                               <Insets left="10.0" />
@@ -79,9 +79,9 @@
                         </Label>
                         <Group>
                            <children>
-                              <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="324.0" text="Fremmer samarbejdet mellem bier og planter" />
-                              <RadioButton layoutY="22.5" mnemonicParsing="false" prefHeight="30.0" prefWidth="335.0" text="Minimerer væksten af ukrudt" />
-                              <RadioButton layoutY="45.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="322.0" text="Opretholder den optimale jordfugtighed" />
+                              <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="324.0" text="Fremmer samarbejdet mellem bier og planter" fx:id="button2_1"/>
+                              <RadioButton layoutY="22.5" mnemonicParsing="false" prefHeight="30.0" prefWidth="335.0" text="Minimerer væksten af ukrudt" fx:id="button2_2"/>
+                              <RadioButton layoutY="45.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="322.0" text="Opretholder den optimale jordfugtighed" fx:id="button2_3"/>
                            </children>
                            <VBox.margin>
                               <Insets left="10.0" />
@@ -109,9 +109,9 @@
                         </Label>
                         <Group>
                            <children>
-                              <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="349.0" text="Det skræmmer skadedyr væk" />
-                              <RadioButton layoutY="22.5" mnemonicParsing="false" prefHeight="30.0" prefWidth="358.0" text="Det forbedrer jordkvaliteten " />
-                              <RadioButton layoutY="45.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="360.0" text="Det gør at planterne smager lidt af biokul" />
+                              <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="349.0" text="Det skræmmer skadedyr væk" fx:id="button3_1"/>
+                              <RadioButton layoutY="22.5" mnemonicParsing="false" prefHeight="30.0" prefWidth="358.0" text="Det forbedrer jordkvaliteten " fx:id="button3_2"/>
+                              <RadioButton layoutY="45.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="360.0" text="Det gør at planterne smager lidt af biokul" fx:id="button3_3"/>
                            </children>
                            <VBox.margin>
                               <Insets left="10.0" />
@@ -140,9 +140,9 @@
                         </Label>
                         <Group>
                            <children>
-                              <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="333.0" text="Landmanden sparer tid og kræfter" />
-                              <RadioButton layoutY="22.5" mnemonicParsing="false" prefHeight="30.0" prefWidth="293.0" text="Lavere forbrug af diesel" />
-                              <RadioButton layoutY="45.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Mindre vandforbrug" />
+                              <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="333.0" text="Landmanden sparer tid og kræfter" fx:id="button4_1"/>
+                              <RadioButton layoutY="22.5" mnemonicParsing="false" prefHeight="30.0" prefWidth="293.0" text="Lavere forbrug af diesel" fx:id="button4_2"/>
+                              <RadioButton layoutY="45.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Mindre vandforbrug" fx:id="button4_3"/>
                            </children>
                            <VBox.margin>
                               <Insets left="10.0" />
@@ -167,9 +167,9 @@
                         </Label>
                         <Group>
                            <children>
-                              <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="15%" />
-                              <RadioButton layoutY="22.5" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="20%" />
-                              <RadioButton layoutY="45.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="33%" />
+                              <RadioButton mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="15%" fx:id="button5_1"/>
+                              <RadioButton layoutY="22.5" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="20%" fx:id="button5_2"/>
+                              <RadioButton layoutY="45.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="33%" fx:id="button5_3"/>
                            </children>
                            <VBox.margin>
                               <Insets left="10.0" />
@@ -179,7 +179,7 @@
                   </VBox>
                   <Pane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <Button layoutX="282.0" layoutY="58.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="227.0" style="-fx-background-color: #008000; -fx-font-size: 45px; -fx-text-fill: #FFFFFF;" text="Done!" textFill="WHITE">
+                        <Button fx:id="submitButton" layoutX="282.0" layoutY="58.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="227.0" style="-fx-background-color: #008000; -fx-font-size: 45px; -fx-text-fill: #FFFFFF;" text="Done!" textFill="WHITE" onMouseClicked="#checkAnswers">
                            <font>
                               <Font size="32.0" />
                            </font>

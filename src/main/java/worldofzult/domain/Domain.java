@@ -4,6 +4,7 @@ import worldofzult.domain.character.Group;
 import worldofzult.domain.commands.Registry;
 import worldofzult.domain.game.Game;
 import worldofzult.domain.inventory.Item;
+import worldofzult.domain.menus.Quiz;
 import worldofzult.domain.player.Player;
 import worldofzult.domain.session.Context;
 import worldofzult.domain.session.Counter;
@@ -15,6 +16,7 @@ import java.util.Map;
 public class Domain {
     private Context context;
     private Registry registry;
+    private Quiz quiz;
 
     public Domain() {
        Game.initRegistry();
@@ -22,6 +24,8 @@ public class Domain {
        registry = Game.getRegistry();
        Player player = new Player("");
        context.setPlayer(player);
+       this.quiz = new Quiz();
+       quiz.initQuiz();
     }
 
     public String runCommand(String command) {
@@ -106,5 +110,9 @@ public class Domain {
 
     public void setPlayerName(String playerName) {
         context.getPlayer().setName(playerName);
+    }
+
+    public boolean checkQuizAnswer(int index, String answer) {
+        return quiz.checkAnswer(index, answer);
     }
 }
