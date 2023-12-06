@@ -22,6 +22,8 @@ public class CLIApplication {
         startscreen.printWelcomeMessage();
         domain.runCommand("hjælp");
 
+        domain.setCapacity(5);
+
         while (domain.checkIsDone()==false) { // Runs game if not done
             System.out.print("> ");
             String line = scanner.nextLine(); // Get next line from commandline input
