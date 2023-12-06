@@ -33,7 +33,7 @@
             <ImageView fx:id="miniMap" fitHeight="204.0" fitWidth="339.0" pickOnBounds="true" preserveRatio="true" />
             <TextArea fx:id="terminal" editable="false" prefHeight="352.0" prefWidth="341.0" style="-fx-opacity: 1;" wrapText="true" >
              <font>
-                 <Font size="22.0" />
+                 <Font size="18.0" />
              </font>
              </TextArea>
          </children>
