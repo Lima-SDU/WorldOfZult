@@ -17,7 +17,7 @@ public class CommandGiveItem extends BaseCommand implements Command {
 
         //Check if exactly one item is selected
         if (guardEq(parameters, 1)) {
-            message.append("Fejl kun et redskab må gives");
+            message.append("Fejl kun et redskab må gives.\n");
             return message.toString(); //Stops command
         }
 
@@ -36,7 +36,7 @@ public class CommandGiveItem extends BaseCommand implements Command {
             if (group.checkItem(parameters[0])) {
                 playerInventory.removeItem(playerInventory.getItem(parameters[0]));
                 group.setHunger(false);
-                message.append(parameters[0] + " blev givet til gruppen\n");
+                message.append(parameters[0] + " blev givet til gruppen.\n");
                 message.append(group.getSpeech2());
 
                 boolean isDone = true;
@@ -56,11 +56,11 @@ public class CommandGiveItem extends BaseCommand implements Command {
 
             } else {
                 //if group refuses item, print wrong item
-                return message.append("Fejl: " + parameters[0] + " kan ikke bruges af gruppen").toString();
+                return message.append("Fejl: " + parameters[0] + " kan ikke bruges af gruppen.\n").toString();
             }
         } else {
             //if there is no group in the current space, print no group in this space
-            return message.append("Fejl: Der er ingen gruppe i rummet").toString();
+            return message.append("Fejl: Der er ingen gruppe i rummet.\n").toString();
         }
     }
 }

@@ -29,7 +29,7 @@ public class CommandTalk extends BaseCommand implements Command {
             }
         } else {
             //Prints out an error, as there is no group in the space
-            return message.append("\nDer er ingen gruppe i rummet du kan snakke med\n").toString();
+            return message.append("\nDer er ingen gruppe i rummet du kan snakke med.\n").toString();
         }
     }
 }

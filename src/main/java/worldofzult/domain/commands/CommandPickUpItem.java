@@ -43,7 +43,7 @@ public class CommandPickUpItem extends BaseCommand implements Command {
             //Prints error, if the input doesn't match any item
             return message.append("Fejl: Redskab ikke fundet").toString();
         } else {
-            return message.append("Fejl: Inventory er fyldt op").toString();
+            return message.append("Fejl: Inventory er fyldt op.\n").toString();
         }
     }
 }
