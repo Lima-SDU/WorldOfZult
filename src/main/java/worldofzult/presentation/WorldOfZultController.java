@@ -98,6 +98,7 @@ public class WorldOfZultController {
     public ArrayList<ImageView> inventoryImageViews;
     public ArrayList<MenuItem> giveButtons;
     public ArrayList<MenuItem> putDownButtons;
+    private ArrayList<MenuButton> itemMenuButtons;
 
     @FXML
     public void initialize() {
@@ -108,7 +109,6 @@ public class WorldOfZultController {
         // Set initial image for the room and minimap
         imgGame.setImage(new Image("file:src/main/resources/worldofzult/presentation/images/before/Indgang.png"));
         miniMap.setImage(new Image("file:src/main/resources/worldofzult/presentation/images/minimap/indgang.png"));
-        updateStatusBar();
 
         // Set initial visible arrows
         boolean[] edges = domain.getCurrentExits();
@@ -125,6 +125,15 @@ public class WorldOfZultController {
         item5.setPopupSide(Side.TOP);
 
         // INITIALIZE VARIABLES AND GROUPING VARIABLES IN ARRAYS
+        // Add items (MenuButton) to an ArrayList
+        itemMenuButtons = new ArrayList<MenuButton>();
+
+        itemMenuButtons.add(item1);
+        itemMenuButtons.add(item2);
+        itemMenuButtons.add(item3);
+        itemMenuButtons.add(item4);
+        itemMenuButtons.add(item5);
+
         // Add ImageViews of the item placements to an ArrayList
         roomImageViews = new ArrayList<ImageView>();
 
@@ -214,6 +223,9 @@ public class WorldOfZultController {
 
         // Set action for quizButton
         goToQuizButton.setOnAction(goToQuiz);
+
+        updateStatusBar();
+        updateGame();
     }
 
     @FXML
@@ -335,6 +347,7 @@ public class WorldOfZultController {
         for (int i = 0; i < giveButtons.size(); i++) {
             giveButtons.get(i).setUserData("");
             putDownButtons.get(i).setUserData("");
+            itemMenuButtons.get(i).setDisable(true);
         }
 
         // GET CURRENT ITEMS IN INVENTORY
@@ -342,6 +355,7 @@ public class WorldOfZultController {
 
         // SHOW CURRENT ITEMS IN INVENTORY BY ITERATING THROUGH THEM
         for (int i = 0; i < itemsInInventory.size(); i++) {
+            itemMenuButtons.get(i).setDisable(false);
             inventoryImageViews.get(i).setImage(new Image(findItemImage(itemsInInventory.get(i))));
             inventoryImageViews.get(i).setUserData(itemsInInventory.get(i));
             giveButtons.get(i).setUserData(itemsInInventory.get(i));
