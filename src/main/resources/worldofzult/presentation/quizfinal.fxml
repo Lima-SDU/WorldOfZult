@@ -15,17 +15,26 @@
 
 <VBox prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #FFEBCD;" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="worldofzult.presentation.QuizController">
    <children>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <AnchorPane prefHeight="118.0" prefWidth="1200.0">
          <children>
-            <Line endX="979.8391723632812" endY="161.53656005859375" layoutX="-17.0" layoutY="-20.0" startX="212.16876220703125" startY="161.53656005859375" />
-            <Label contentDisplay="TEXT_ONLY" layoutX="380.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="152.0" prefWidth="442.0" text="WoZ Quiz">
+            <Line endX="979.8391723632812" endY="161.53656005859375" layoutX="-20.0" layoutY="-68.0" startX="212.16876220703125" startY="161.53656005859375" />
+            <Label contentDisplay="TEXT_ONLY" layoutX="380.0" layoutY="-26.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="144.0" prefWidth="442.0" text="WoZ Quiz">
                <font>
                   <Font name="Baoli SC Regular" size="96.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0">
+      <AnchorPane prefHeight="109.0" prefWidth="1200.0">
+         <children>
+            <Label layoutX="124.0" layoutY="11.0" prefHeight="79.0" prefWidth="936.0" text="Tillykke! Du har hjulpet alle grupperne med nogle af deres problemer med fødevareproduktion og dermed hjulpet med at modvirke sult! Test din viden med denne quiz!" wrapText="true">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="1200.0">
          <children>
             <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0">
                <children>
@@ -39,7 +48,7 @@
                               <Insets left="10.0" />
                            </VBox.margin>
                         </Label>
-                        <Label layoutX="10.0" layoutY="10.0" prefHeight="41.0" prefWidth="512.0" text="Hvad er det primære formål med vækstlys i landbruget og indendørs havebrug?" wrapText="true">
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="59.0" prefWidth="512.0" text="Hvad er det primære formål med vækstlys i landbruget og indendørs havebrug?" wrapText="true">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -69,7 +78,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <Label prefHeight="41.0" prefWidth="512.0" text="Hvordan hjælper et vandingssystem med at forbedre landbrugsproduktionen?" wrapText="true">
+                        <Label prefHeight="69.0" prefWidth="512.0" text="Hvordan hjælper et vandingssystem med at forbedre landbrugsproduktionen?" wrapText="true">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -179,7 +188,7 @@
                   </VBox>
                   <Pane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="submitButton" layoutX="282.0" layoutY="58.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="227.0" style="-fx-background-color: #008000; -fx-font-size: 45px; -fx-text-fill: #FFFFFF;" text="Done!" textFill="WHITE" onMouseClicked="#checkAnswers">
+                        <Button layoutX="282.0" layoutY="58.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="227.0" style="-fx-background-color: #008000; -fx-font-size: 45px; -fx-text-fill: #FFFFFF;" text="Færdig!" textFill="WHITE">
                            <font>
                               <Font size="32.0" />
                            </font>
